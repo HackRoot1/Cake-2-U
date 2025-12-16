@@ -124,7 +124,7 @@ Route::prefix('/admin')->group(function () {
     Route::put('/staffs/{id}', function ($id) {
         // Logic to update the permission would go here
     })->name('staffs.update');
-    
+
     Route::get('/staffs/show/{id}', function ($id) {
         return view('backend.staffs.view');
     })->name('staffs.show');
@@ -132,12 +132,12 @@ Route::prefix('/admin')->group(function () {
     Route::delete('/staffs/{id}', function ($id) {
         // Logic to update the permission would go here
     })->name('staffs.destroy');
-    
+
 
 
     // ================== Customers =================== 
 
-    
+
     Route::get('/customer', function () {
         return view('backend.customers.index');
     })->name('customers.index');
@@ -157,7 +157,7 @@ Route::prefix('/admin')->group(function () {
     Route::put('/customers/{id}', function ($id) {
         // Logic to update the permission would go here
     })->name('customers.update');
-    
+
     Route::get('/customers/show/{id}', function ($id) {
         return view('backend.customers.view');
     })->name('customers.show');
@@ -169,7 +169,7 @@ Route::prefix('/admin')->group(function () {
     Route::post('/customers/bulk', function ($id) {
         // Logic to update the permission would go here
     })->name('customers.bulk');
-    
+
     Route::get('/customers/export', function ($id) {
         // Logic to update the permission would go here
     })->name('customers.export');
@@ -179,11 +179,75 @@ Route::prefix('/admin')->group(function () {
     })->name('customers.unblock');
 
 
-    
+
+
+    // ================== Products =================== 
+
+
+    Route::get('/product', function () {
+        return view('backend.products.index');
+    })->name('products.index');
+
+    Route::get('/product/create', function () {
+        return view('backend.products.create');
+    })->name('products.create');
+
+    Route::post('/product/store', function () {
+        // Logic to store product
+    })->name('products.store');
+
+    Route::get('/products/{id}/edit', function ($id) {
+        return view('backend.products.edit');
+    })->name('products.edit');
+
+    Route::put('/products/{id}', function ($id) {
+        // Logic to update the permission would go here
+    })->name('products.update');
+
+    Route::get('/products/show/{id}', function ($id) {
+        return view('backend.products.view');
+    })->name('products.show');
+
+    Route::delete('/products/{id}', function ($id) {
+        // Logic to update the permission would go here
+    })->name('products.destroy');
 
 
 
 
+
+    Route::post('/products/bulk', function ($id) {
+        // Logic to update the permission would go here
+    })->name('products.bulk');
+
+    Route::post('/products/duplicate', function ($id) {
+        // Logic to update the permission would go here
+    })->name('products.duplicate');
+
+    Route::post('/products/activate', function ($id) {
+        // Logic to update the permission would go here
+    })->name('products.activate');
+
+    Route::post('/products/deactivate', function ($id) {
+        // Logic to update the permission would go here
+    })->name('products.deactivate');
+
+    Route::get('/products/export', function ($id) {
+        // Logic to update the permission would go here
+    })->name('products.export');
+
+    Route::post('/products/unblock', function ($id) {
+        // Logic to update the permission would go here
+    })->name('products.unblock');
+
+
+
+
+
+
+    Route::get('/orders/show/{id}', function ($id) {
+        return view('backend.orders.view');
+    })->name('orders.show');
 
 
 

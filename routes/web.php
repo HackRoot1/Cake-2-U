@@ -241,6 +241,37 @@ Route::prefix('/admin')->group(function () {
     })->name('products.unblock');
 
 
+    // ==================== Category ====================
+
+
+    Route::get('/category', function () {
+        return view('backend.category.index');
+    })->name('category.index');
+
+    Route::get('/category/create', function () {
+        return view('backend.category.create');
+    })->name('category.create');
+
+    Route::post('/category/store', function () {
+        // Logic to store category
+    })->name('category.store');
+
+    Route::get('/category/{id}/edit', function ($id) {
+        return view('backend.category.edit');
+    })->name('category.edit');
+
+    Route::put('/category/{id}', function ($id) {
+        // Logic to update the permission would go here
+    })->name('category.update');
+
+    Route::get('/category/show/{id}', function ($id) {
+        return view('backend.category.view');
+    })->name('category.show');
+
+    Route::delete('/category/{id}', function ($id) {
+        // Logic to update the permission would go here
+    })->name('category.destroy');
+
 
 
 

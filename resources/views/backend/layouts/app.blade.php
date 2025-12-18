@@ -89,7 +89,7 @@
 					</li>
 					
 					<li class="sidebar-item">
-						<a class='sidebar-link' href='pages-profile.html'>
+						<a class='sidebar-link' href='{{ route('category.index') }}'>
 							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Category</span>
 						</a>
 					</li>

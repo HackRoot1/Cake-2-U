@@ -272,6 +272,55 @@ Route::prefix('/admin')->group(function () {
         // Logic to update the permission would go here
     })->name('category.destroy');
 
+    Route::get('/category/reorder', function ($id) {
+        // Logic to update the permission would go here
+    })->name('category.reorder');
+
+
+    
+    
+    // ==================== Coupons ====================
+
+
+    Route::get('/coupons', function () {
+        return view('backend.coupons.index');
+    })->name('coupons.index');
+
+    Route::get('/coupons/create', function () {
+        return view('backend.coupons.create');
+    })->name('coupons.create');
+
+    Route::post('/coupons/store', function () {
+        // Logic to store coupons
+    })->name('coupons.store');
+
+    Route::get('/coupons/{id}/edit', function ($id) {
+        return view('backend.coupons.edit');
+    })->name('coupons.edit');
+
+    Route::put('/coupons/{id}', function ($id) {
+        // Logic to update the permission would go here
+    })->name('coupons.update');
+
+    Route::get('/coupons/show/{id}', function ($id) {
+        return view('backend.coupons.view');
+    })->name('coupons.show');
+
+    Route::delete('/coupons/{id}', function ($id) {
+        // Logic to update the permission would go here
+    })->name('coupons.destroy');
+
+    Route::post('/coupons/bulk', function ($id) {
+        // Logic to update the permission would go here
+    })->name('coupons.bulk');
+
+    Route::post('/coupons/deactivate', function ($id) {
+        // Logic to update the permission would go here
+    })->name('coupons.deactivate');
+
+    Route::post('/coupons/export', function ($id) {
+        // Logic to update the permission would go here
+    })->name('coupons.export');
 
 
 

@@ -3,50 +3,228 @@
 @section('content')
     <main class="content">
         <div class="container-fluid p-0">
-
             <div class="row mb-2 mb-xl-3 align-items-center">
                 <div class="col-auto d-none d-sm-block">
-                    <h3><strong>Customer</strong> Profile</h3>
+                    <h3><strong>Order</strong> Details</h3>
                 </div>
-
                 <div class="col-auto ms-auto text-end mt-n1">
-                    <a href="{{ route('customers.index') }}" class="btn btn-secondary me-2">Back to customers</a>
-
-                    <div class="btn-group">
-                        <a href="{{ route('customers.edit', $customer->id ?? 0) }}" class="btn btn-primary">Edit</a>
-                        <button class="btn btn-outline-primary" onclick="window.location='#sendPromo'">Send Promo</button>
-                        @if(isset($customer->status) && $customer->status == 'active')
-                            <form method="POST" action="{{ route('customers.block', $customer->id ?? 0) }}" class="d-inline">
-                                @csrf
-                                <button type="submit" class="btn btn-outline-dark">Block</button>
-                            </form>
-                        @else
-                            <form method="POST" action="{{ route('customers.unblock', $customer->id ?? 0) }}" class="d-inline">
-                                @csrf
-                                <button type="submit" class="btn btn-success">Unblock</button>
-                            </form>
-                        @endif
-
-                        <div class="btn-group ms-2">
-                            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li>
-                                    <form method="POST" action="{{ route('customers.destroy', $customer->id ?? 0) }}" onsubmit="return confirm('Delete customer and all related data?');">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="dropdown-item text-danger">Delete Customer</button>
-                                    </form>
-                                </li>
-                                <li><a class="dropdown-item" href="{{ route('customers.export', $customer->id ?? 0) }}">Export Data</a></li>
-                                <li><a class="dropdown-item" href="#merge">Merge Duplicates</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    <a href="{{ route('orders.index') }}" class="btn btn-secondary me-2">Back to orders</a>
                 </div>
             </div>
 
+
             <div class="row">
-                <div class="col-12 col-lg-4">
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-body d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-1">Order <strong>#{{ $order_id ?? '2001' }}</strong></h5>
+                                <div class="small text-muted">Placed on: 2025-12-20</div>
+                                <div class="small text-muted">Payment: Visa ending *4242</div>
+                            </div>
+
+                            <div class="text-end">
+                                <div class="mb-2"><span class="badge bg-warning">Processing</span></div>
+                                <div class="mb-2">Total: <strong>$122.50</strong></div>
+                                <div>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Print</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">Invoice</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Items (detailed table) -->
+                    <div class="card mb-3">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <h5 class="card-title mb-0">Order Items</h5>
+                            <div class="small text-muted">3 items</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-borderless align-middle mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Customization</th>
+                                            <th>Qty</th>
+                                            <th class="text-end">Unit Price</th>
+                                            <th class="text-end">Item Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="d-flex align-items-center">
+                                                <img src="{{ asset('img/products/product-1.jpg') }}" alt="" class="rounded me-3 img-fluid" style="width:56px;height:56px;object-fit:cover;max-width:56px;">
+                                                <div>
+                                                    <div><strong>Classic Leather Wallet</strong></div>
+                                                    <div class="small text-muted">SKU: WAL-001</div>
+                                                </div>
+                                            </td>
+                                            <td>Color: Brown</td>
+                                            <td>1</td>
+                                            <td class="text-end">$45.00</td>
+                                            <td class="text-end">$45.00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="d-flex align-items-center">
+                                                <img src="{{ asset('img/products/product-2.jpg') }}" alt="" class="rounded me-3 img-fluid" style="width:56px;height:56px;object-fit:cover;max-width:56px;">
+                                                <div>
+                                                    <div><strong>Wireless Earbuds</strong></div>
+                                                    <div class="small text-muted">Model: EBX-5</div>
+                                                </div>
+                                            </td>
+                                            <td>Color: Black</td>
+                                            <td>1</td>
+                                            <td class="text-end">$59.00</td>
+                                            <td class="text-end">$59.00</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="d-flex align-items-center">
+                                                <img src="{{ asset('img/products/product-3.jpg') }}" alt="" class="rounded me-3 img-fluid" style="width:56px;height:56px;object-fit:cover;max-width:56px;">
+                                                <div>
+                                                    <div><strong>Travel Organizer</strong></div>
+                                                    <div class="small text-muted">Variant: Compact</div>
+                                                </div>
+                                            </td>
+                                            <td>Color: Grey</td>
+                                            <td>1</td>
+                                            <td class="text-end">$18.50</td>
+                                            <td class="text-end">$18.50</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="small text-muted">Special instructions</div>
+                                    <div class="mb-2">Please leave at the front desk if nobody is available.</div>
+
+                                    <div class="small text-muted">Recipient</div>
+                                    <div>John Doe — <a href="tel:+1234567890">+1 234 567 890</a></div>
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <div class="d-flex justify-content-end">
+                                        <div class="w-50">
+                                            <div class="d-flex justify-content-between small text-muted"><div>Subtotal</div><div>$122.50</div></div>
+                                            <div class="d-flex justify-content-between small text-muted"><div>Discount</div><div>-$5.00</div></div>
+                                            <div class="d-flex justify-content-between small text-muted"><div>Shipping</div><div>$5.00</div></div>
+                                            <div class="d-flex justify-content-between small text-muted"><div>Tax</div><div>$0.00</div></div>
+                                            <hr>
+                                            <div class="d-flex justify-content-between"><div><strong>Total</strong></div><div><strong>$122.50</strong></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping, Billing, Status & Actions -->
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Delivery Information</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="small text-muted">Deliver to:</div>
+                                    <div class="mt-2">John Doe<br>123 Main St, Apt 4B<br>Springfield, IL 62704<br>USA</div>
+
+                                    <hr>
+                                    <div class="small text-muted">Scheduled delivery</div>
+                                    <div class="mt-1"><strong>2025-12-24</strong> · 10:00 - 12:00</div>
+
+                                    <hr>
+                                    <div class="small text-muted">Special instructions</div>
+                                    <div class="mt-1">Leave at front desk if recipient not available.</div>
+                                </div>
+                            </div>
+
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Billing & Payment</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="small text-muted">Billed to:</div>
+                                    <div class="mt-1">John Doe<br>456 Billing Ave<br>Springfield, IL 62701</div>
+
+                                    <hr>
+                                    <div class="small text-muted">Payment</div>
+                                    <div class="mt-1">Visa ending <strong>*4242</strong> · Transaction ID: <strong>TXN-20251220-2001</strong></div>
+                                    <div class="mt-2"><span class="badge bg-success">Payment Completed</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-header d-flex align-items-center justify-content-between">
+                                    <h5 class="card-title mb-0">Order Status</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <div class="small text-muted">Current status</div>
+                                        <div class="mt-1"><span class="badge bg-warning text-dark">Processing</span></div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Update status</label>
+                                        <div class="d-flex gap-2">
+                                            <select id="statusSelect" class="form-select w-50">
+                                                <option value="pending">Pending</option>
+                                                <option value="processing" selected>Processing</option>
+                                                <option value="packed">Packed</option>
+                                                <option value="shipped">Shipped</option>
+                                                <option value="out_for_delivery">Out for Delivery</option>
+                                                <option value="delivered">Delivered</option>
+                                                <option value="cancelled">Cancelled</option>
+                                                <option value="returned">Returned</option>
+                                            </select>
+                                            <button class="btn btn-primary" id="updateStatusBtn">Update</button>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input type="checkbox" id="notifyCustomer" class="form-check-input">
+                                            <label class="form-check-label" for="notifyCustomer">Notify customer (SMS/Email)</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <a href="{{ route('orders.edit', $order_id ?? 2001) }}" class="btn btn-outline-secondary">Edit Order</a>
+                                        <button class="btn btn-danger" id="cancelBtn" data-bs-toggle="modal" data-bs-target="#cancelModalView">Cancel</button>
+                                        <button class="btn btn-warning" id="refundBtn" data-bs-toggle="modal" data-bs-target="#refundModalView">Refund</button>
+                                        <form method="POST" action="{{ route('orders.print', $order_id ?? 2001) }}" class="d-inline">
+                                            @csrf
+                                            <button class="btn btn-outline-dark">Print</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Status timeline -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Status Timeline</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="timeline list-unstyled mb-0">
+                                        <li class="mb-2"><strong>2025-12-20 14:10</strong> — Order placed</li>
+                                        <li class="mb-2"><strong>2025-12-20 15:00</strong> — Payment completed</li>
+                                        <li class="mb-2"><strong>2025-12-21 09:00</strong> — Processing (current)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
                     <!-- Profile card -->
                     <div class="card mb-3">
                         <div class="card-body text-center">
@@ -301,5 +479,96 @@
                 </div>
             </div>
         </div>
+
+        <!-- Cancel Modal for View -->
+        <div class="modal fade" id="cancelModalView" tabindex="-1" aria-labelledby="cancelModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="POST" action="{{ route('orders.cancel', $order_id ?? 2001) }}">
+                        @csrf
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="cancelModalLabel">Cancel Order #{{ $order_id ?? '2001' }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label class="form-label">Reason for cancellation</label>
+                                <textarea name="reason" class="form-control" rows="3" placeholder="Optional note to record why this order was cancelled"></textarea>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="refund_if_paid" id="refundIfPaidView">
+                                <label class="form-check-label" for="refundIfPaidView">Process refund if payment already captured</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-danger">Confirm Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Refund Modal for View -->
+        <div class="modal fade" id="refundModalView" tabindex="-1" aria-labelledby="refundModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="POST" action="{{ route('orders.refund', $order_id ?? 2001) }}">
+                        @csrf
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="refundModalLabel">Refund Order #{{ $order_id ?? '2001' }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label class="form-label">Refund amount (max ${{ number_format(122.50,2) }})</label>
+                                <input type="number" step="0.01" min="0" max="122.50" name="amount" class="form-control" value="0.00">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Reason</label>
+                                <textarea name="reason" class="form-control" rows="3" placeholder="Reason for refund (optional)"></textarea>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="restock_items" id="restockItemsView">
+                                <label class="form-check-label" for="restockItemsView">Restock items</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-warning">Confirm Refund</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Handle update status via fetch
+                var updateBtn = document.getElementById('updateStatusBtn');
+                if (updateBtn) {
+                    updateBtn.addEventListener('click', function () {
+                        var status = document.getElementById('statusSelect').value;
+                        var notify = document.getElementById('notifyCustomer').checked;
+                        if (!confirm('Update status to ' + status + '?')) return;
+
+                        fetch("{{ route('orders.update-status', $order_id ?? 2001) }}", {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                            },
+                            body: JSON.stringify({ status: status, notify: notify })
+                        }).then(function (res) { return res.text(); }).then(function (text) {
+                            // Server currently redirects back with a status message; reload to reflect change
+                            alert(text || 'Status updated');
+                            location.reload();
+                        }).catch(function (err) {
+                            alert('Error updating status');
+                        });
+                    });
+                }
+            });
+        </script>
     </main>
 @endsection 

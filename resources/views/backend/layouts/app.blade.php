@@ -3,12 +3,21 @@
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Project Title</title>
 
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet">
 
 	<link class="js-stylesheet" href="{{ asset('css/light.css') }}" rel="stylesheet">
-	
+
+	<!-- Small responsive helper -->
+	<style>
+		.table td, .table th { word-break: break-word; }
+		@media (max-width: 576px) {
+			/* ensure long texts wrap and tables remain scrollable */
+			.table-responsive { overflow-x: auto; }
+		}
+	</style>
 </head>
 
 <body>
@@ -105,7 +114,7 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class='sidebar-link' href='pages-profile.html'>
+						<a class='sidebar-link' href='{{ route('orders.index') }}'>
 							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Order</span>
 						</a>
 					</li>

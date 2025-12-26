@@ -325,11 +325,72 @@ Route::prefix('/admin')->group(function () {
 
 
 
+    Route::get('/orders', function () {
+        return view('backend.orders.index');
+    })->name('orders.index');
+
     Route::get('/orders/show/{id}', function ($id) {
-        return view('backend.orders.view');
+        return view('backend.orders.view', ['order_id' => $id]);
     })->name('orders.show');
 
+    Route::post('/orders/track/{id}', function ($id) {
+        // Logic to initiate tracking or show tracking info
+        return back()->with('status', 'Tracking info requested for order ' . $id);
+    })->name('orders.track');
 
+    Route::post('/orders/reorder/{id}', function ($id) {
+        // Logic to reorder
+        return back()->with('status', 'Reorder placed for order ' . $id);
+    })->name('orders.reorder');
+
+    Route::get('/orders/{id}/edit', function ($id) {
+        return view('backend.orders.edit', ['order_id' => $id]);
+    })->name('orders.edit');
+
+    Route::post('/orders/print/{id}', function ($id) {
+        // Placeholder for printing
+        return back()->with('status', 'Print requested for order ' . $id);
+    })->name('orders.print');
+
+    Route::post('/orders/refund/{id}', function ($id) {
+        // Process refund
+        return back()->with('status', 'Refund processed for order ' . $id);
+    })->name('orders.refund');
+
+    Route::post('/orders/cancel/{id}', function ($id) {
+        // Logic to cancel order
+        return back()->with('status', 'Order ' . $id . ' cancelled.');
+    })->name('orders.cancel');
+
+    Route::post('/orders/update-status/{id}', function ($id) {
+        // Update order status stub (returns JSON for AJAX updates)
+        return response()->json(['message' => 'Order ' . $id . ' status updated.']);
+    })->name('orders.update-status');
+
+    Route::post('/orders/return/{id}', function ($id) {
+        // Logic to process return/exchange
+        return back()->with('status', 'Return/exchange requested for order ' . $id);
+    })->name('orders.return');
+
+    Route::post('/orders/bulk', function () {
+        // Bulk actions stub
+        return back()->with('status', 'Bulk action executed.');
+    })->name('orders.bulk');
+
+    // New order routes (UI + stubs)
+    Route::get('/orders/create', function () {
+        return view('backend.orders.create');
+    })->name('orders.create');
+
+    Route::post('/orders/store', function () {
+        // Placeholder to create order (sample)
+        return back()->with('status', 'Order created (sample).');
+    })->name('orders.store');
+
+    Route::put('/orders/{id}', function ($id) {
+        // Update order (sample)
+        return back()->with('status', 'Order ' . $id . ' updated.');
+    })->name('orders.update');
 
 
     Route::get('/profile', function () {

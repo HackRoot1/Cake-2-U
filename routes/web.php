@@ -393,6 +393,18 @@ Route::prefix('/admin')->group(function () {
     })->name('orders.update');
 
 
+
+
+
+
+
+
+
+
+
+
+
+
     Route::get('/profile', function () {
         return view('backend.profile');
     })->name('profile');
@@ -404,4 +416,52 @@ Route::prefix('/admin')->group(function () {
     Route::get('/reports', function () {
         return view('backend.reports');
     })->name('reports');
+
+    // =================== Payments ===================
+    Route::get('/payments', function () {
+        return view('backend.payments.index');
+    })->name('payments.index');
+
+    Route::get('/payments/create', function () {
+        return view('backend.payments.create');
+    })->name('payments.create');
+
+    Route::post('/payments/store', function () {
+        // Logic to store the payment (stub)
+    })->name('payments.store');
+
+    Route::get('/payments/{id}', function ($id) {
+        return view('backend.payments.view', ['transaction_id' => $id]);
+    })->name('payments.view');
+
+    Route::get('/payments/{id}/edit', function ($id) {
+        return view('backend.payments.edit', ['transaction_id' => $id]);
+    })->name('payments.edit');
+
+    Route::put('/payments/{id}', function ($id) {
+        // Logic to update the payment (stub)
+    })->name('payments.update');
+
+    Route::post('/payments/{id}/refund', function ($id) {
+        // Process refund (stub)
+        return back()->with('status', 'Refund initiated for ' . $id);
+    })->name('payments.refund');
+
+    Route::get('/payments/{id}/receipt', function ($id) {
+        // Generate/download receipt (stub)
+        return back()->with('status', 'Receipt download requested for ' . $id);
+    })->name('payments.receipt');
+
+    Route::get('/payments/reports', function () {
+        return view('backend.payments.reports');
+    })->name('payments.reports');
+
+    Route::get('/payments/webhooks', function () {
+        return view('backend.payments.webhooks');
+    })->name('payments.webhooks');
+
+    Route::post('/payments/webhooks/verify', function () {
+        // Manual webhook verification (stub)
+        return back()->with('status', 'Webhook verified (stub).');
+    })->name('payments.webhooks.verify');
 });

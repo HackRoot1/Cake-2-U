@@ -146,14 +146,46 @@
 
 
                     <li class="sidebar-header">
+                        Settings
+                    </li>
+
+                    <li class="sidebar-item {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
+                        <a data-bs-toggle="collapse" href="#settingsMenu" aria-expanded="{{ request()->routeIs('admin.settings.*') ? 'true' : 'false' }}" class="sidebar-link {{ request()->routeIs('admin.settings.*') ? '' : 'collapsed' }}">
+                            <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Settings</span>
+                        </a>
+                        <ul id="settingsMenu" class="sidebar-dropdown list-unstyled collapse {{ request()->routeIs('admin.settings.*') ? 'show' : '' }}" data-bs-parent="#sidebar">
+                            <li class="sidebar-item {{ request()->routeIs('admin.settings.general') ? 'active' : '' }}"><a class='sidebar-link' href='{{ route('admin.settings.general') }}'>General</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.settings.email') ? 'active' : '' }}'><a class='sidebar-link' href='{{ route('admin.settings.email') }}'>Email</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.settings.payment') ? 'active' : '' }}'><a class='sidebar-link' href='{{ route('admin.settings.payment') }}'>Payment Gateway</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.settings.delivery') ? 'active' : '' }}'><a class='sidebar-link' href='{{ route('admin.settings.delivery') }}'>Delivery</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.settings.notifications') ? 'active' : '' }}'><a class='sidebar-link' href='{{ route('admin.settings.notifications') }}'>Notifications</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.settings.seo') ? 'active' : '' }}'><a class='sidebar-link' href='{{ route('admin.settings.seo') }}'>SEO</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.settings.api') ? 'active' : '' }}'><a class='sidebar-link' href='{{ route('admin.settings.api') }}'>API</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.settings.security') ? 'active' : '' }}'><a class='sidebar-link' href='{{ route('admin.settings.security') }}'>Backup & Security</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.settings.tax') ? 'active' : '' }}'><a class='sidebar-link' href='{{ route('admin.settings.tax') }}'>Tax (GST)</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-header">
                         Reports & Analytics
                     </li>
 
-                    <li class="sidebar-item">
-                        <a class='sidebar-link' href='#'>
-                            <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Reports &
-                                Analytics</span>
+                    <li class="sidebar-item {{ request()->routeIs('admin.reports.*') ? 'active' : '' }}">
+                        <a data-bs-toggle="collapse" href="#reportsMenu" aria-expanded="{{ request()->routeIs('admin.reports.*') ? 'true' : 'false' }}" class="sidebar-link {{ request()->routeIs('admin.reports.*') ? '' : 'collapsed' }}">
+                            <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Reports & Analytics</span>
                         </a>
+                        <ul id="reportsMenu" class="sidebar-dropdown list-unstyled collapse {{ request()->routeIs('admin.reports.*') ? 'show' : '' }}" data-bs-parent="#sidebar">
+                            <li class="sidebar-item {{ request()->routeIs('admin.reports.dashboard') ? 'active' : '' }}"><a class='sidebar-link' href='{{ route('admin.reports.dashboard') }}'>Dashboard</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.reports.sales') ? 'active' : '' }}"><a class='sidebar-link' href='{{ route('admin.reports.sales') }}'>Sales Report</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.reports.customers') ? 'active' : '' }}"><a class='sidebar-link' href='{{ route('admin.reports.customers') }}'>Customer Report</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.reports.products') ? 'active' : '' }}"><a class='sidebar-link' href='{{ route('admin.reports.products') }}'>Product Report</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.reports.orders') ? 'active' : '' }}"><a class='sidebar-link' href='{{ route('admin.reports.orders') }}'>Order Report</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.reports.payments') ? 'active' : '' }}"><a class='sidebar-link' href='{{ route('admin.reports.payments') }}'>Payment Report</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.reports.inventory') ? 'active' : '' }}"><a class='sidebar-link' href='{{ route('admin.reports.inventory') }}'>Inventory Report</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.reports.feedback') ? 'active' : '' }}"><a class='sidebar-link' href='{{ route('admin.reports.feedback') }}'>Customer Feedback</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.reports.delivery') ? 'active' : '' }}"><a class='sidebar-link' href='{{ route('admin.reports.delivery') }}'>Delivery Report</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.reports.custom') ? 'active' : '' }}"><a class='sidebar-link' href='{{ route('admin.reports.custom') }}'>Custom Report Builder</a></li>
+                        </ul>
                     </li>
 
                     <li class="sidebar-header">
@@ -311,6 +343,18 @@
                         <li class="nav-item d-none d-md-block me-2">
                             <a class="nav-icon" href="{{ route('admin.backups.index') }}" title="Backups">
                                 <i class="align-middle" data-feather="database"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item d-none d-md-block me-2">
+                            <a class="nav-icon" href="{{ route('admin.reports.dashboard') }}" title="Reports & Analytics">
+                                <i class="align-middle" data-feather="bar-chart-2"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item d-none d-md-block me-2">
+                            <a class="nav-icon" href="{{ route('admin.settings.general') }}" title="Settings">
+                                <i class="align-middle" data-feather="settings"></i>
                             </a>
                         </li>
 

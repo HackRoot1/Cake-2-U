@@ -489,6 +489,44 @@ Route::prefix('/admin')->group(function () {
         return view('backend.settings');
     })->name('settings');
 
+    // ==================== Admin Settings (UI-only) ====================
+    // NOTE: UI-only routes; integrate with controllers and validation in future.
+    Route::get('/settings/general', function () {
+        return view('backend.settings.general');
+    })->name('admin.settings.general');
+
+    Route::get('/settings/email', function () {
+        return view('backend.settings.email');
+    })->name('admin.settings.email');
+
+    Route::get('/settings/payment', function () {
+        return view('backend.settings.payment');
+    })->name('admin.settings.payment');
+
+    Route::get('/settings/delivery', function () {
+        return view('backend.settings.delivery');
+    })->name('admin.settings.delivery');
+
+    Route::get('/settings/notifications', function () {
+        return view('backend.settings.notifications');
+    })->name('admin.settings.notifications');
+
+    Route::get('/settings/seo', function () {
+        return view('backend.settings.seo');
+    })->name('admin.settings.seo');
+
+    Route::get('/settings/api', function () {
+        return view('backend.settings.api');
+    })->name('admin.settings.api');
+
+    Route::get('/settings/security', function () {
+        return view('backend.settings.security');
+    })->name('admin.settings.security');
+
+    Route::get('/settings/tax', function () {
+        return view('backend.settings.tax');
+    })->name('admin.settings.tax');
+
     Route::get('/reports', function () {
         return view('backend.reports');
     })->name('reports');
@@ -568,6 +606,49 @@ Route::prefix('/admin')->group(function () {
         // Retention policy settings (UI only)
         return view('backend.audit.settings');
     })->name('admin.audit.settings');
+
+    // ==================== Reports & Analytics (UI-only) ====================
+
+    // NOTE: UI-only routes. Replace with controllers and data access in the future.
+    Route::get('/reports', function () {
+        return view('backend.reports.dashboard');
+    })->name('admin.reports.dashboard');
+
+    Route::get('/reports/sales', function () {
+        return view('backend.reports.sales');
+    })->name('admin.reports.sales');
+
+    Route::get('/reports/customers', function () {
+        return view('backend.reports.customers');
+    })->name('admin.reports.customers');
+
+    Route::get('/reports/products', function () {
+        return view('backend.reports.products');
+    })->name('admin.reports.products');
+
+    Route::get('/reports/orders', function () {
+        return view('backend.reports.orders');
+    })->name('admin.reports.orders');
+
+    Route::get('/reports/payments', function () {
+        return view('backend.reports.payments');
+    })->name('admin.reports.payments');
+
+    Route::get('/reports/inventory', function () {
+        return view('backend.reports.inventory');
+    })->name('admin.reports.inventory');
+
+    Route::get('/reports/feedback', function () {
+        return view('backend.reports.feedback');
+    })->name('admin.reports.feedback');
+
+    Route::get('/reports/delivery', function () {
+        return view('backend.reports.delivery');
+    })->name('admin.reports.delivery');
+
+    Route::get('/reports/custom', function () {
+        return view('backend.reports.custom');
+    })->name('admin.reports.custom');
 
     Route::get('/payments/webhooks', function () {
         return view('backend.payments.webhooks');

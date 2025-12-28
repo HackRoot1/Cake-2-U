@@ -7,7 +7,7 @@
                 <h1 class="h3 mb-0 text-gray-800">Transaction Details</h1>
                 <div>
                     <a href="/admin/payments" class="btn btn-outline-secondary">Back to List</a>
-                    <a href="#" class="btn btn-primary">Download Receipt</a>
+                    <a href="{{ route('payments.webhooks') }}" class="btn btn-primary">Download Receipt</a>
                     <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#refundModal">Process
                         Refund</button>
                 </div>

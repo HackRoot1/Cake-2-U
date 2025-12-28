@@ -240,6 +240,82 @@ Route::prefix('/admin')->group(function () {
         // Logic to update the permission would go here
     })->name('products.unblock');
 
+    // ==================== Reviews (UI-only) ====================
+
+    // Reviews Management (UI-only routes with dummy data)
+    Route::get('/reviews', function () {
+        // Dummy page showing list of reviews (UI only)
+        return view('backend.reviews.index');
+    })->name('admin.reviews.index');
+
+    Route::get('/reviews/settings', function () {
+        // Review moderation settings (UI only)
+        return view('backend.reviews.settings');
+    })->name('admin.reviews.settings');
+
+    Route::get('/reviews/{id}', function ($id) {
+        // Review detail (UI only) - in real app you would fetch by $id
+        $reviewId = $id;
+        return view('backend.reviews.show', compact('reviewId'));
+    })->name('admin.reviews.show');
+
+
+    // ==================== Delivery (UI-only) ====================
+
+    // Delivery Management UI-only routes
+    Route::get('/delivery/slots', function () {
+        return view('backend.delivery.slots.index');
+    })->name('admin.delivery.slots.index');
+
+    Route::get('/delivery/slots/calendar', function () {
+        return view('backend.delivery.slots.calendar');
+    })->name('admin.delivery.slots.calendar');
+
+    Route::get('/delivery/assignments', function () {
+        return view('backend.delivery.assignments');
+    })->name('admin.delivery.assignments');
+
+    Route::get('/delivery/partners', function () {
+        return view('backend.delivery.partners.index');
+    })->name('admin.delivery.partners.index');
+
+    Route::get('/delivery/tracking', function () {
+        return view('backend.delivery.tracking');
+    })->name('admin.delivery.tracking');
+
+    Route::get('/delivery/issues', function () {
+        return view('backend.delivery.issues');
+    })->name('admin.delivery.issues');
+
+    Route::get('/delivery/reports', function () {
+        return view('backend.delivery.reports');
+    })->name('admin.delivery.reports');
+
+    // ==================== Backup & Restore (UI-only) ====================
+
+    Route::get('/backups/scheduled', function () {
+        return view('backend.backups.scheduled');
+    })->name('admin.backups.scheduled');
+
+    Route::get('/backups', function () {
+        return view('backend.backups.index');
+    })->name('admin.backups.index');
+
+    Route::get('/backups/create', function () {
+        return view('backend.backups.create');
+    })->name('admin.backups.create');
+
+    Route::get('/backups/restore', function () {
+        return view('backend.backups.restore');
+    })->name('admin.backups.restore');
+
+    Route::get('/backups/security', function () {
+        return view('backend.backups.security');
+    })->name('admin.backups.security');
+
+    Route::get('/backups/verify', function () {
+        return view('backend.backups.verify');
+    })->name('admin.backups.verify');
 
     // ==================== Category ====================
 
@@ -464,4 +540,71 @@ Route::prefix('/admin')->group(function () {
         // Manual webhook verification (stub)
         return back()->with('status', 'Webhook verified (stub).');
     })->name('payments.webhooks.verify');
+
+
+
+    Route::get('/banners', function() {
+        return view('backend.banners.index');
+    })->name('banner.index');
+
+    Route::get('/banners/show', function() {
+        return view('backend.banners.view');
+    })->name('banner.show');
+   
+    Route::get('/banners/create', function() {
+        return view('backend.banners.create');
+    })->name('banner.create');
+    
+    Route::get('/banners/edit', function() {
+        return view('backend.banners.edit');
+    })->name('banner.edit');
+
+
+
+    Route::get('/promotional-banners', function() {
+        return view('backend.promotional-banners.index');
+    })->name('promotional.banner.index');
+
+    Route::get('/promotional/banners/show', function() {
+        return view('backend.promotional-banners.view');
+    })->name('promotional.banner.show');
+   
+    Route::get('/promotional/banners/create', function() {
+        return view('backend.promotional-banners.create');
+    })->name('promotional.banner.create');
+    
+    Route::get('/promotional/banners/edit', function() {
+        return view('backend.promotional-banners.edit');
+    })->name('promotional.banner.edit');
+
+    // ==================== Newsletters ====================
+
+    // Template CRUD (UI stubs)
+    Route::get('/newsletters', function () {
+        return view('backend.newsletters.index');
+    })->name('newsletter.index');
+
+    Route::get('/newsletters/create', function () {
+        return view('backend.newsletters.create');
+    })->name('newsletter.create');
+
+    Route::get('/newsletters/{id}/edit', function ($id) {
+        // In a real app you would fetch the template by $id
+        return view('backend.newsletters.edit');
+    })->name('newsletter.edit');
+
+    Route::get('/newsletters/show/{id}', function ($id) {
+        // In a real app you would fetch the campaign/template by $id
+        return view('backend.newsletters.view');
+    })->name('newsletter.show');
+
+    // Campaigns (demo stubs)
+    Route::get('/campaigns', function () {
+        return view('backend.newsletters.index');
+    })->name('campaigns.index');
+
+    Route::get('/campaigns/{id}', function ($id) {
+        return view('backend.newsletters.view');
+    })->name('campaigns.show');
+
 });

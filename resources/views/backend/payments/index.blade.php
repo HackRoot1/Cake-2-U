@@ -107,31 +107,31 @@
                                     <tbody>
                                         <tr>
                                             <td>txn_0001</td>
-                                            <td><a href="/admin/payments/view/txn_0001">ORD-1001</a></td>
+                                            <td><a href="{{ route('payments.view', 1) }}">ORD-1001</a></td>
                                             <td>John Doe</td>
                                             <td>₹ 2,499.00</td>
                                             <td>Card</td>
                                             <td><span class="badge bg-success">Completed</span></td>
                                             <td>2025-12-20 10:32</td>
                                             <td>
-                                                <a href="/admin/payments/view/txn_0001"
+                                                <a href="{{ route('payments.view', 1) }}"
                                                     class="btn btn-sm btn-outline-primary">View</a>
                                                 <button class="btn btn-sm btn-outline-warning" data-bs-toggle="modal"
                                                     data-bs-target="#refundModal" data-txn="txn_0001">Refund</button>
-                                                <a href="#" class="btn btn-sm btn-outline-secondary">Receipt</a>
+                                                <a href="{{ route('payments.receipt', 1) }}" class="btn btn-sm btn-outline-secondary">Receipt</a>
                                             </td>
                                         </tr>
 
                                         <tr>
                                             <td>txn_0002</td>
-                                            <td><a href="/admin/payments/view/txn_0002">ORD-1002</a></td>
+                                            <td><a href="{{ route('payments.view', 1) }}">ORD-1002</a></td>
                                             <td>Jane Smith</td>
                                             <td>₹ 599.00</td>
                                             <td>UPI</td>
                                             <td><span class="badge bg-warning text-dark">Pending</span></td>
                                             <td>2025-12-21 11:12</td>
                                             <td>
-                                                <a href="/admin/payments/view/txn_0002"
+                                                <a href="{{ route('payments.view', 1) }}"
                                                     class="btn btn-sm btn-outline-primary">View</a>
                                                 <button class="btn btn-sm btn-outline-warning" data-bs-toggle="modal"
                                                     data-bs-target="#refundModal" data-txn="txn_0002">Refund</button>
@@ -141,14 +141,14 @@
 
                                         <tr>
                                             <td>txn_0003</td>
-                                            <td><a href="/admin/payments/view/txn_0003">ORD-1003</a></td>
+                                            <td><a href="{{ route('payments.view', 1) }}">ORD-1003</a></td>
                                             <td>Akash Kumar</td>
                                             <td>₹ 199.00</td>
                                             <td>Wallet</td>
                                             <td><span class="badge bg-danger">Failed</span></td>
                                             <td>2025-12-22 09:45</td>
                                             <td>
-                                                <a href="/admin/payments/view/txn_0003"
+                                                <a href="{{ route('payments.view', 1) }}"
                                                     class="btn btn-sm btn-outline-primary">View</a>
                                                 <button class="btn btn-sm btn-outline-secondary" disabled>Refund</button>
                                                 <a href="#" class="btn btn-sm btn-outline-secondary">Receipt</a>

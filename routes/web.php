@@ -532,6 +532,43 @@ Route::prefix('/admin')->group(function () {
         return view('backend.payments.reports');
     })->name('payments.reports');
 
+    // ==================== Audit Logs (UI-only) ====================
+
+    // NOTE: This is a UI-only implementation. In a real app, add middleware, observers and a controller.
+    Route::get('/audit-logs', function () {
+        // Dummy page showing list of audit logs (UI only)
+        return view('backend.audit.index');
+    })->name('admin.audit.index');
+
+    Route::get('/audit-logs/{id}', function ($id) {
+        // Audit log detail (UI only) - in real app you would fetch by $id
+        $log = (object) [
+            'id' => $id,
+            'action' => 'Edit',
+            'user_name' => 'Jane Doe',
+            'user_email' => 'jane@example.com',
+            'entity_type' => 'Product',
+            'entity_name' => 'Example Product',
+            'timestamp' => now()->subHours(3)->toDateTimeString(),
+            'ip' => '192.168.1.10',
+            'device' => 'Chrome on Windows 10',
+            'before' => ['price' => '10.00', 'name' => 'Old name'],
+            'after' => ['price' => '12.99', 'name' => 'Example Product'],
+            'summary' => 'Price updated from 10.00 to 12.99'
+        ];
+        return view('backend.audit.show', compact('log'));
+    })->name('admin.audit.show');
+
+    Route::get('/audit-logs/reports', function () {
+        // Reports dashboard (UI only)
+        return view('backend.audit.reports');
+    })->name('admin.audit.reports');
+
+    Route::get('/audit-logs/settings', function () {
+        // Retention policy settings (UI only)
+        return view('backend.audit.settings');
+    })->name('admin.audit.settings');
+
     Route::get('/payments/webhooks', function () {
         return view('backend.payments.webhooks');
     })->name('payments.webhooks');

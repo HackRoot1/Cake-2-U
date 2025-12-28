@@ -276,11 +276,15 @@
                         Audit Logs
                     </li>
 
-                    <li class="sidebar-item">
-                        <a class='sidebar-link' href='pages-profile.html'>
-                            <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Audit
-                                Logs</span>
+                    <li class="sidebar-item {{ request()->routeIs('admin.audit.*') ? 'active' : '' }}">
+                        <a data-bs-toggle="collapse" href="#auditLogsMenu" aria-expanded="{{ request()->routeIs('admin.audit.*') ? 'true' : 'false' }}" class="sidebar-link {{ request()->routeIs('admin.audit.*') ? '' : 'collapsed' }}">
+                            <i class="align-middle" data-feather="file-text"></i> <span class="align-middle">Audit Logs</span>
                         </a>
+                        <ul id="auditLogsMenu" class="sidebar-dropdown list-unstyled collapse {{ request()->routeIs('admin.audit.*') ? 'show' : '' }}" data-bs-parent="#sidebar">
+                            <li class="sidebar-item {{ request()->routeIs('admin.audit.index') ? 'active' : '' }}"><a class='sidebar-link' href='{{ route('admin.audit.index') }}'>Audit Log List</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.audit.reports') ? 'active' : '' }}"><a class='sidebar-link' href='{{ route('admin.audit.reports') }}'>Audit Reports</a></li>
+                            <li class="sidebar-item {{ request()->routeIs('admin.audit.settings') ? 'active' : '' }}"><a class='sidebar-link' href='{{ route('admin.audit.settings') }}'>Retention Policy</a></li>
+                        </ul>
                     </li>
 
                 </ul>
@@ -308,6 +312,16 @@
                             <a class="nav-icon" href="{{ route('admin.backups.index') }}" title="Backups">
                                 <i class="align-middle" data-feather="database"></i>
                             </a>
+                        </li>
+
+                        <li class="nav-item d-none d-md-block me-2">
+                            <a class="nav-icon" href="{{ route('admin.audit.index') }}" title="Audit Logs">
+                                <i class="align-middle" data-feather="file-text"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item d-none d-md-block me-2">
+                            <span class="badge bg-success" title="All admin actions are logged instantly">Real-time logging enabled</span>
                         </li>
 
                         <li class="nav-item dropdown">

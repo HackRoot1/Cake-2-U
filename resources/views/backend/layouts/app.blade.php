@@ -62,6 +62,16 @@
 
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">
+                        Dashboard
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class='sidebar-link' href='{{ route('backend.dashboard') }}'>
+                            <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-header">
                         Roles & Permissions
                     </li>
 

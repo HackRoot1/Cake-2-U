@@ -37,6 +37,11 @@
                                     </div>
                                 </div>
 
+                                <hr>
+                                <div class="row mb-3">
+                                    <h5 class="card-title">Personal Details</h5>
+                                </div>
+
                                 <div class="row mb-3">
                                     <div class="mb-3 col-md-6">
                                         <label for="firstname" class="form-label">First Name</label>

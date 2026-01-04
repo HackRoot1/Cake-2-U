@@ -34,11 +34,64 @@
                                 <div class="mb-3">
                                     <label class="form-label">Permissions</label>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="permissions[]"
-                                            value="#" id="perm_#">
-                                        <label class="form-check-label" for="perm_#">
-                                            Sample Permission
-                                        </label><br>
+                                        <div class="row g-2">
+                                            <div class="col-md-4">
+                                                <input class="form-check-input" type="checkbox" name="permissions[]"
+                                                    value="#" id="perm_#">
+                                                <label class="form-check-label" for="perm_#">
+                                                    Sample Permission
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input class="form-check-input" type="checkbox" name="permissions[]"
+                                                    value="#" id="perm_#">
+                                                <label class="form-check-label" for="perm_#">
+                                                    Sample Permission
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input class="form-check-input" type="checkbox" name="permissions[]"
+                                                    value="#" id="perm_#">
+                                                <label class="form-check-label" for="perm_#">
+                                                    Sample Permission
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input class="form-check-input" type="checkbox" name="permissions[]"
+                                                    value="#" id="perm_#">
+                                                <label class="form-check-label" for="perm_#">
+                                                    Sample Permission
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input class="form-check-input" type="checkbox" name="permissions[]"
+                                                    value="#" id="perm_#">
+                                                <label class="form-check-label" for="perm_#">
+                                                    Sample Permission
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input class="form-check-input" type="checkbox" name="permissions[]"
+                                                    value="#" id="perm_#">
+                                                <label class="form-check-label" for="perm_#">
+                                                    Sample Permission
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input class="form-check-input" type="checkbox" name="permissions[]"
+                                                    value="#" id="perm_#">
+                                                <label class="form-check-label" for="perm_#">
+                                                    Sample Permission
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input class="form-check-input" type="checkbox" name="permissions[]"
+                                                    value="#" id="perm_#">
+                                                <label class="form-check-label" for="perm_#">
+                                                    Sample Permission
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Create Role</button>

@@ -13,10 +13,8 @@
             </div>
 
             <div class="row">
-
                 <div class="col-12">
                     <div class="card">
-
                         <div class="card-body">
                             <ul class="nav nav-tabs mb-3">
                                 <li class="nav-item">

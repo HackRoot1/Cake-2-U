@@ -3,24 +3,22 @@
 @section('content')
     <main class="content">
         <div class="container-fluid p-0">
-
             <div class="row mb-2 mb-xl-3 align-items-center">
                 <div class="col-auto d-none d-sm-block">
-                    <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+                    {{-- <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Categories</a></li>
                             <li class="breadcrumb-item"><a href="#">Chocolate</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Dark Chocolate</li>
                         </ol>
-                    </nav>
+                    </nav> --}}
                     <h3><strong>Category</strong> Detail</h3>
                 </div>
 
                 <div class="col-auto ms-auto text-end mt-n1">
-                    <a href="#" class="btn btn-secondary me-2">Back to categories</a>
-
+                    <a href="{{ route('category.index') }}" class="btn btn-secondary me-2">Back to categories</a>
                     <div class="btn-group">
-                        <a href="#" class="btn btn-primary">Edit</a>
+                        <a href="{{ route('category.edit', 1) }}" class="btn btn-primary">Edit</a>
                         <form onsubmit="return confirm('Delete category and its 1 product? This action cannot be undone.');" class="d-inline">
                             <button type="submit" class="btn btn-outline-danger">Delete</button>
                         </form>
@@ -33,7 +31,7 @@
                     <!-- Category card -->
                     <div class="card mb-3">
                         <div class="card-body text-center">
-                            <img src="/img/placeholder-250x250.png" alt="Category" class="rounded img-fluid" style="width:150px;height:150px;object-fit:cover;">
+                            <img src="https://placehold.co/250x250" alt="Category" class="rounded img-fluid" style="width:150px;height:150px;object-fit:cover;">
 
                             <h4 class="mt-3 mb-0">Dark Chocolate</h4>
                             <div class="small text-muted mb-2">Slug: <code>dark-chocolate</code></div>
@@ -44,7 +42,7 @@
                             </div>
 
                             <div class="d-grid gap-2">
-                                <a href="#" class="btn btn-primary">Edit Category</a>
+                                <a href="{{ route('category.edit', 1) }}" class="btn btn-primary">Edit Category</a>
                                 <button class="btn btn-outline-secondary" onclick="location.href='#add-product'">Add Product</button>
                             </div>
                         </div>

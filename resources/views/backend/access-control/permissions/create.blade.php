@@ -3,12 +3,10 @@
 @section('content')
     <main class="content">
         <div class="container-fluid p-0">
-
             <div class="row mb-2 mb-xl-3">
                 <div class="col-auto d-none d-sm-block">
                     <h3><strong>Create</strong> Permission</h3>
                 </div>
-
                 <div class="col-auto ms-auto text-end mt-n1">
                     <a href="{{ route('permissions.index') }}" class="btn btn-secondary">Back to Permissions</a>
                 </div>
@@ -30,7 +28,6 @@
                                     <input type="text" class="form-control" id="name" name="name"
                                         placeholder="Enter permission name" required>
                                 </div>
-
                                 <button type="submit" class="btn btn-primary">Create Permission</button>
                             </form>
                         </div>

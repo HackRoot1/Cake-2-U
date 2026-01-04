@@ -11,11 +11,14 @@
                     <a href="{{ route('customers.create') }}" class="btn btn-primary">New Customer</a>
                 </div>
             </div>
-
             <div class="row">
-
                 <div class="col-12">
                     <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Customers</h5>
+                            <h6 class="card-subtitle text-muted">Manage Customers — search, filter, sort and paginate
+                                results.</h6>
+                        </div>
 
                         <div class="card-body">
                             <ul class="nav nav-tabs mb-3">
@@ -114,108 +117,93 @@
                                         status filters.</div>
                                 </form>
                             </div>
+
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"><input type="checkbox" id="selectAll"></th>
+                                            <th scope="col">Customer&nbsp;ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Registration&nbsp;Date</th>
+                                            <th scope="col">Total&nbsp;Orders</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col" class="text-end">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" disabled></td>
+                                            <th scope="row">1001</th>
+                                            <td>
+                                                <div class="text-truncate cell-truncate">Test Customer A
+                                                    <div class="small text-muted d-block d-sm-none">testa@example.com
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><a href="mailto:testa@example.com">testa@example.com</a></td>
+                                            <td>2025-01-10 10:00</td>
+                                            <td>3</td>
+                                            <td><span class="badge bg-success">Active</span></td>
+                                            <td class="text-end">
+                                                <div class="d-inline-flex gap-1">
+                                                    <a href="{{ route('customers.show', 1) }}"
+                                                        class="btn btn-sm btn-outline-primary ">View</a>
+                                                    <a href="#" class="btn btn-sm btn-outline-primary ">Orders</a>
+                                                    <a href="#" class="btn btn-sm btn-outline-secondary ">Msg</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><input type="checkbox" disabled></td>
+                                            <th scope="row">1002</th>
+                                            <td>
+                                                <div class="text-truncate cell-truncate">Test Customer B
+                                                    <div class="small text-muted d-block d-sm-none">testb@example.com
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><a href="mailto:testb@example.com">testb@example.com</a></td>
+                                            <td>2024-06-22 15:30</td>
+                                            <td>7</td>
+                                            <td><span class="badge bg-secondary">Inactive</span></td>
+                                            <td class="text-end">
+                                                <div class="d-inline-flex gap-1">
+                                                    <a href="{{ route('customers.show', 1) }}"
+                                                        class="btn btn-sm btn-outline-primary ">View</a>
+                                                    <a href="#" class="btn btn-sm btn-outline-primary ">Orders</a>
+                                                    <a href="#" class="btn btn-sm btn-outline-secondary ">Msg</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <th scope="row">1003</th>
+                                            <td>
+                                                <div class="text-truncate cell-truncate">Sample Customer C
+                                                    <div class="small text-muted d-block d-sm-none">samplec@example.com
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><a href="mailto:samplec@example.com">samplec@example.com</a></td>
+                                            <td>2023-09-05 09:20</td>
+                                            <td>0</td>
+                                            <td><span class="badge bg-success">Active</span></td>
+                                            <td class="text-end">
+                                                <div class="d-inline-flex gap-1">
+                                                    <a href="#" class="btn btn-sm btn-outline-primary ">View</a>
+                                                    <a href="#" class="btn btn-sm btn-outline-primary ">Orders</a>
+                                                    <a href="#" class="btn btn-sm btn-outline-secondary ">Msg</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-
-                        <div class="card-body">
-                            <form id="bulkActionForm" method="POST" action="{{ route('customers.bulk') }}">
-                                @csrf
-                                <input type="hidden" name="action" id="bulkActionInput" value="">
-
-                                <div class="table-responsive">
-                                    <table class="table table-hover mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col"><input type="checkbox" id="selectAll"></th>
-                                                <th scope="col">Customer&nbsp;ID</th>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Email</th>
-                                                <th scope="col">Registration&nbsp;Date</th>
-                                                <th scope="col">Total&nbsp;Orders</th>
-                                                <th scope="col">Status</th>
-                                                <th scope="col" class="text-end">Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><input type="checkbox" disabled></td>
-                                                <th scope="row">1001</th>
-                                                <td>
-                                                    <div class="text-truncate cell-truncate">Test Customer A
-                                                        <div class="small text-muted d-block d-sm-none">testa@example.com
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td><a href="mailto:testa@example.com">testa@example.com</a></td>
-                                                <td>2025-01-10 10:00</td>
-                                                <td>3</td>
-                                                <td><span class="badge bg-success">Active</span></td>
-                                                <td class="text-end">
-                                                    <div class="d-inline-flex gap-1">
-                                                        <a href="{{ route('customers.show', 1) }}"
-                                                            class="btn btn-sm btn-outline-primary ">View</a>
-                                                        <a href="#"
-                                                            class="btn btn-sm btn-outline-primary ">Orders</a>
-                                                        <a href="#"
-                                                            class="btn btn-sm btn-outline-secondary ">Msg</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td><input type="checkbox" disabled></td>
-                                                <th scope="row">1002</th>
-                                                <td>
-                                                    <div class="text-truncate cell-truncate">Test Customer B
-                                                        <div class="small text-muted d-block d-sm-none">testb@example.com
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td><a href="mailto:testb@example.com">testb@example.com</a></td>
-                                                <td>2024-06-22 15:30</td>
-                                                <td>7</td>
-                                                <td><span class="badge bg-secondary">Inactive</span></td>
-                                                <td class="text-end">
-                                                    <div class="d-inline-flex gap-1">
-                                                        <a href="{{ route('customers.show', 1) }}"
-                                                            class="btn btn-sm btn-outline-primary ">View</a>
-                                                        <a href="#"
-                                                            class="btn btn-sm btn-outline-primary ">Orders</a>
-                                                        <a href="#"
-                                                            class="btn btn-sm btn-outline-secondary ">Msg</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td><input type="checkbox" ></td>
-                                                <th scope="row">1003</th>
-                                                <td>
-                                                    <div class="text-truncate cell-truncate">Sample Customer C
-                                                        <div class="small text-muted d-block d-sm-none">samplec@example.com
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td><a href="mailto:samplec@example.com">samplec@example.com</a></td>
-                                                <td>2023-09-05 09:20</td>
-                                                <td>0</td>
-                                                <td><span class="badge bg-success">Active</span></td>
-                                                <td class="text-end">
-                                                    <div class="d-inline-flex gap-1">
-                                                        <a href="#"
-                                                            class="btn btn-sm btn-outline-primary ">View</a>
-                                                        <a href="#"
-                                                            class="btn btn-sm btn-outline-primary ">Orders</a>
-                                                        <a href="#"
-                                                            class="btn btn-sm btn-outline-secondary ">Msg</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </form>
-                        </div>
-
 
                         <div class="card-footer d-flex flex-column flex-md-row align-items-center justify-content-between">
                             <div class="mb-2 mb-md-0 d-flex align-items-center">

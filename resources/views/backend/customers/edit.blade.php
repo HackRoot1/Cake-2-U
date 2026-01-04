@@ -18,7 +18,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title">New customer</h5>
+                            <h5 class="card-title">Edit customer</h5>
                             <h6 class="card-subtitle text-muted">Edit an existing customer by filling out the form below.</h6>
                         </div>
 
@@ -35,6 +35,11 @@
                                             <option>Inactive</option>
                                         </select>
                                     </div>
+                                </div>
+
+                                <hr>
+                                <div class="row mb-3">
+                                    <h5 class="card-title">Address Details</h5>
                                 </div>
 
                                 <div class="row mb-3">
@@ -85,9 +90,7 @@
                                         <input type="text" class="form-control" id="inputAddress2"
                                             placeholder="Apartment, studio, or floor">
                                     </div>
-                                </div>
-
-                                <div class="row">
+                                    
                                     <div class="mb-3 col-md-3">
                                         <label class="form-label" for="inputState">Country</label>
                                         <select id="inputState" class="form-control">

@@ -3,12 +3,10 @@
 @section('content')
     <main class="content">
         <div class="container-fluid p-0">
-
             <div class="row mb-2 mb-xl-3">
                 <div class="col-auto d-none d-sm-block">
                     <h3><strong>Create</strong> Coupon</h3>
                 </div>
-
                 <div class="col-auto ms-auto text-end mt-n1">
                     <a href="{{ route('coupons.index') }}" class="btn btn-secondary">Back to Coupons</a>
                 </div>
@@ -21,11 +19,9 @@
                             <h5 class="card-title">New Coupon</h5>
                             <h6 class="card-subtitle text-muted">Create a new coupon by filling out the form below.</h6>
                         </div>
-
                         <div class="card-body">
                             <form method="POST" action="{{ route('coupons.store') }}">
                                 @csrf
-
                                 <div class="row mb-3">
                                     <div class="mb-3 col-md-6">
                                         <label for="code" class="form-label">Coupon Code <span
@@ -216,36 +212,4 @@
             </div>
         </div>
     </main>
-@endsection
-
-@section('scripts')
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Basic client-side validation for coupon form
-            const form = document.querySelector('form[action="{{ route('coupons.store') }}"]');
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    const code = document.getElementById('code');
-                    const value = parseFloat(document.getElementById('discount_value').value || 0);
-                    const start = document.getElementById('start_date').value;
-                    const end = document.getElementById('end_date').value;
-                    if (!code || !code.value.trim()) {
-                        alert('Coupon code is required');
-                        e.preventDefault();
-                        return;
-                    }
-                    if (!(value > 0)) {
-                        alert('Discount value must be greater than zero');
-                        e.preventDefault();
-                        return;
-                    }
-                    if (start && end && start > end) {
-                        alert('End date must be after start date');
-                        e.preventDefault();
-                        return;
-                    }
-                });
-            }
-        });
-    </script>
 @endsection

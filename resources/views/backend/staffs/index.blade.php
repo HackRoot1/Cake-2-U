@@ -11,20 +11,14 @@
                     <a href="{{ route('staffs.create') }}" class="btn btn-primary">New Staff</a>
                 </div>
             </div>
-
             <div class="row">
-
                 <div class="col-12">
                     <div class="card">
-                        <div
-                            class="card-header d-flex flex-column flex-md-row align-items-md-center justify-content-between">
-                            <div>
-                                <h5 class="card-title mb-0">Staffs</h5>
-                                <h6 class="card-subtitle text-muted">Manage Staff — search, filter, sort and paginate
-                                    results.</h6>
-                            </div>
+                        <div class="card-header">
+                            <h5 class="card-title">Staffs</h5>
+                            <h6 class="card-subtitle text-muted">Manage Staff — search, filter, sort and paginate
+                                results.</h6>
                         </div>
-
                         <div class="card-body">
                             <ul class="nav nav-tabs mb-3">
                                 <li class="nav-item">
@@ -40,7 +34,6 @@
                                         href="{{ route('staffs.index', array_merge(request()->except('status'), ['status' => 'inactive'])) }}">Inactive</a>
                                 </li>
                             </ul>
-
                             <div class="bg-light border rounded p-3 mb-3 filter-bar">
                                 <form method="GET" class="row g-2">
                                     <div class="col-10 col-md-10">
@@ -98,61 +91,62 @@
 
                                     <div class="col-2 col-md-2 text-end">
                                         <button type="submit" class="btn btn-primary">Apply</button>
+                                        <button type="submit" class="btn btn-secondary">Clear</button>
                                     </div>
 
                                     <div class="col-12 mt-2 small text-muted">Tip: combine filters or use tabs for quick
                                         status filters.</div>
                                 </form>
                             </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Staff ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Phone</th>
+                                            <th scope="col">Role</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Last Login</th>
+                                            <th scope="col" class="text-end">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>John Doe</td>
+                                            <td><a href="#">john@example.com</a></td>
+                                            <td>+1 555-555-5555</td>
+                                            <td>Manager</td>
+                                            <td><span class="badge bg-success">Active</span></td>
+                                            <td>2025-12-14 09:14</td>
+                                            <td class="text-end">
+                                                <a href="{{ route('staffs.show', 1) }}"
+                                                    class="btn btn-sm btn-outline-primary">View</a>
+                                                <a href="{{ route('staffs.edit', 1) }}"
+                                                    class="btn btn-sm btn-outline-secondary">Edit</a>
+                                                <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jane Smith</td>
+                                            <td><a href="#">jane@example.com</a></td>
+                                            <td>+1 555-111-2222</td>
+                                            <td>Editor</td>
+                                            <td><span class="badge bg-secondary">Inactive</span></td>
+                                            <td>—</td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+                                                <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                                <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-
-                        <div class="table-responsive">
-                            <table class="table table-hover mb-0">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Staff ID</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Phone</th>
-                                        <th scope="col">Role</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Last Login</th>
-                                        <th scope="col" class="text-end">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>John Doe</td>
-                                        <td><a href="#">john@example.com</a></td>
-                                        <td>+1 555-555-5555</td>
-                                        <td>Manager</td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                        <td>2025-12-14 09:14</td>
-                                        <td class="text-end">
-                                            <a href="{{ route('staffs.show', 1) }}" class="btn btn-sm btn-outline-primary">View</a>
-                                            <a href="{{ route('staffs.edit', 1) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
-                                            <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jane Smith</td>
-                                        <td><a href="#">jane@example.com</a></td>
-                                        <td>+1 555-111-2222</td>
-                                        <td>Editor</td>
-                                        <td><span class="badge bg-secondary">Inactive</span></td>
-                                        <td>—</td>
-                                        <td class="text-end">
-                                            <a href="#" class="btn btn-sm btn-outline-primary">View</a>
-                                            <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
-                                            <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
                         <div class="card-footer d-flex flex-column flex-md-row align-items-center justify-content-between">
                             <div class="mb-2 mb-md-0 d-flex align-items-center">
                                 <div class="d-inline-block me-2">Show</div>

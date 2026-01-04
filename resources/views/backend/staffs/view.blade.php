@@ -3,12 +3,10 @@
 @section('content')
     <main class="content">
         <div class="container-fluid p-0">
-
             <div class="row mb-2 mb-xl-3">
                 <div class="col-auto d-none d-sm-block">
                     <h3><strong>Staff</strong> Detail</h3>
                 </div>
-
                 <div class="col-auto ms-auto text-end mt-n1">
                     <a href="{{ route('staffs.index') }}" class="btn btn-secondary">Back to Staffs</a>
                 </div>
@@ -18,37 +16,22 @@
                 <div class="col-12 col-lg-4">
                     <div class="card">
                         <div class="card-body text-center">
-                            <img src="{{ asset('img/avatars/avatar.jpg') }}"
+                            <img src="/img/avatars/avatar.jpg"
                                 alt="Profile" class="rounded-circle img-fluid" style="width:120px;height:120px;object-fit:cover;">
-                            {{-- <img src="{{ $staff->avatar_url ?? ('https://ui-avatars.com/api/?name=' . urlencode($staff->first_name . ' ' . $staff->last_name) . '&background=0D6EFD&color=fff') }}"
-                                alt="Profile" class="rounded-circle img-fluid" style="width:120px;height:120px;object-fit:cover;"> --}}
+                            <!-- optional avatar -->
 
-                            <h4 class="mt-3 mb-0">{{ $staff->first_name ?? 'First' }} {{ $staff->last_name ?? 'Last' }}</h4>
-                            <div class="small text-muted mb-2">@if(isset($staff->role)) {{ $staff->role->name }} @else — @endif</div>
+                            <h4 class="mt-3 mb-0">John Doe</h4>
+                            <div class="small text-muted mb-2">Manager</div>
 
                             <div class="mb-2">
-                                @if(isset($staff->status) && $staff->status == 'active')
                                     <span class="badge bg-success">Active</span>
-                                @else
-                                    <span class="badge bg-secondary">Inactive</span>
-                                @endif
-                            </div>
+                                </div>
 
                             <div class="d-grid gap-2">
-                                <a href="{{ route('staffs.edit', $staff->id ?? 0) }}" class="btn btn-primary">Edit</a>
+                                <a href="{{ route('staffs.edit', 1) }}" class="btn btn-primary">Edit</a>
                                 <button class="btn btn-warning">Reset Password</button>
-
-                                @if(isset($staff->status) && $staff->status == 'active')
-                                    <button class="btn btn-outline-dark">Deactivate</button>
-                                @else
-                                    <button class="btn btn-success">Reactivate</button>
-                                @endif
-
-                                <form method="POST" action="{{ route('staffs.destroy', $staff->id ?? 0) }}" onsubmit="return confirm('Are you sure you want to delete this staff?');">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
+                                <button class="btn btn-outline-dark">Deactivate</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
                             </div>
                         </div>
 
@@ -56,22 +39,22 @@
                             <li class="list-group-item">
                                 <strong>Contact</strong>
                                 <div class="small text-muted mt-1">
-                                    Email: <a href="mailto:">{{ $staff->email ?? '—' }}</a><br>
-                                    Phone: <a href="tel:">{{ $staff->phone ?? '—' }}</a>
+                                    Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a><br>
+                                    Phone: <a href="tel:+15551234567">+1 (555) 123-4567</a>
                                 </div>
                             </li>
 
                             <li class="list-group-item">
                                 <strong>Account</strong>
                                 <div class="small text-muted mt-1">
-                                    Created: {{ isset($staff->created_at) ? $staff->created_at->format('Y-m-d H:i') : '—' }}<br>
-                                    Last Login: {{ isset($staff->last_login_at) ? $staff->last_login_at->format('Y-m-d H:i') : '—' }}
+                                    Created: 2024-06-01 10:30<br>
+                                    Last Login: 2025-12-31 18:45
                                 </div>
                             </li>
 
                             <li class="list-group-item">
                                 <strong>Orders handled</strong>
-                                <div class="small text-muted mt-1">{{ $staff->orders_count ?? 0 }}</div>
+                                <div class="small text-muted mt-1">123</div>
                             </li>
                         </ul>
                     </div>
@@ -84,20 +67,12 @@
                         </div>
 
                         <div class="card-body">
-                            @if(isset($staff->role))
-                                <h6 class="mb-2">Role: <span class="text-primary">{{ $staff->role->name }}</span></h6>
+                            <h6 class="mb-2">Role: <span class="text-primary">Manager</span></h6>
                                 <div class="mb-3">
-                                    @if(isset($staff->role->permissions) && $staff->role->permissions->count())
-                                        @foreach($staff->role->permissions as $permission)
-                                            <span class="badge bg-light text-dark me-1">{{ $permission->name }}</span>
-                                        @endforeach
-                                    @else
-                                        <div class="small text-muted">No permissions assigned.</div>
-                                    @endif
+                                    <span class="badge bg-light text-dark me-1">Manage Orders</span>
+                                    <span class="badge bg-light text-dark me-1">Manage Products</span>
+                                    <span class="badge bg-light text-dark me-1">View Reports</span>
                                 </div>
-                            @else
-                                <div class="small text-muted">No role assigned.</div>
-                            @endif
                         </div>
                     </div>
 
@@ -118,17 +93,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse($activityLogs ?? [] as $log)
-                                            <tr>
-                                                <td>{{ isset($log->created_at) ? $log->created_at->format('Y-m-d H:i') : '—' }}</td>
-                                                <td>{{ $log->description ?? $log->action ?? '—' }}</td>
-                                                <td class="text-end">{{ $log->ip ?? '—' }}</td>
-                                            </tr>
-                                        @empty
-                                            <tr>
-                                                <td colspan="3" class="small text-muted">No recent activity.</td>
-                                            </tr>
-                                        @endforelse
+                                        <tr>
+                                            <td>2025-12-31 18:45</td>
+                                            <td>Logged in</td>
+                                            <td class="text-end">192.0.2.10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-12-30 09:15</td>
+                                            <td>Updated order #1234</td>
+                                            <td class="text-end">192.0.2.11</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-12-25 14:02</td>
+                                            <td>Created product SKU-001</td>
+                                            <td class="text-end">192.0.2.12</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

@@ -3,15 +3,12 @@
 @section('content')
     <main class="content">
         <div class="container-fluid p-0">
-
             <div class="row mb-2 mb-xl-3 align-items-center">
                 <div class="col-auto d-none d-sm-block">
                     <h3><strong>Coupon</strong> Details</h3>
                 </div>
-
                 <div class="col-auto ms-auto text-end mt-n1">
                     <a href="{{ route('coupons.index') }}" class="btn btn-secondary me-2">Back to coupons</a>
-
                     <div class="btn-group">
                         <a href="#edit" class="btn btn-primary">Edit</a>
                         <button type="button" class="btn btn-outline-warning">Deactivate</button>
@@ -35,8 +32,7 @@
                             </div>
 
                             <div class="d-grid gap-2">
-                                <a href="{{ route('coupons.edit', $coupon->id ?? 0) }}" class="btn btn-primary">Edit
-                                    Coupon</a>
+                                <a href="{{ route('coupons.edit', 1) }}" class="btn btn-primary">Edit Coupon</a>
                                 <a href="#" class="btn btn-outline-info">Send Promo</a>
                             </div>
                         </div>
@@ -77,10 +73,14 @@
                             </div>
 
                             <hr>
-                            <canvas id="couponUsageChart" height="120"></canvas>
+                            <canvas id="couponUsageChart" height="240"></canvas>
                         </div>
                     </div>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="col-12 col-lg-8">
                     <div class="card mb-3">
                         <div class="card-header d-flex align-items-center justify-content-between">
                             <h5 class="card-title mb-0">Customers who used this coupon</h5>
@@ -118,217 +118,110 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card mb-3">
-                <div class="card-header">
-                    <h5 class="card-title mb-0">Saved Addresses</h5>
-                </div>
-                <div class="card-body">
-                    @if (isset($addresses) && count($addresses))
-                        <ul class="list-group list-group-flush">
-                            @foreach ($addresses as $addr)
-                                <li class="list-group-item d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <div class="fw-bold">{{ $addr->label ?? 'Address' }}</div>
-                                        <div class="small text-muted">{{ $addr->line1 }}, {{ $addr->city }}
-                                            {{ $addr->postcode }}</div>
-                                    </div>
-                                    <div class="btn-group">
-                                        <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
-                                        <form method="POST" action="#" class="d-inline">
-                                            @csrf
-                                            <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-                                        </form>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
-                    @else
-                        <div class="small text-muted">No saved addresses.</div>
-                    @endif
-                </div>
-            </div>
 
-            <!-- Payment methods -->
-            <div class="card mb-3">
-                <div class="card-header">
-                    <h5 class="card-title mb-0">Payment Methods</h5>
-                </div>
-                <div class="card-body">
-                    @if (isset($payments) && count($payments))
-                        <ul class="list-group list-group-flush">
-                            @foreach ($payments as $p)
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <div class="small">
-                                        {{ strtoupper($p->brand ?? 'Card') }} •••• {{ $p->last4 ?? '****' }} <span
-                                            class="text-muted">(Exp {{ $p->exp_month }}/{{ $p->exp_year }})</span>
-                                    </div>
-                                    <div>
-                                        <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
-                                        <form method="POST" action="#" class="d-inline">
-                                            @csrf
-                                            <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-                                        </form>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
-                    @else
-                        <div class="small text-muted">No payment methods on file.</div>
-                    @endif
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-lg-8">
-            <!-- Summary cards -->
-            <div class="row mb-3">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-4">
                     <div class="card">
                         <div class="card-body">
                             <h6 class="card-title">Order Summary</h6>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <div class="h4 mb-0">{{ $customer->orders_count ?? 0 }}</div>
+
+                            <div class="row text-center g-2 mt-3">
+                                <div class="col-4">
+                                    <div class="h4 mb-0">8</div>
                                     <div class="small text-muted">Total Orders</div>
                                 </div>
-                                <div class="text-end">
-                                    <div class="h5 mb-0">₹{{ number_format($customer->total_spent ?? 0, 2) }}</div>
+                                <div class="col-4">
+                                    <div class="h4 mb-0">₹4,567.89</div>
                                     <div class="small text-muted">Total Spent</div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="d-flex justify-content-between">
-                                <div class="small text-muted">Avg order</div>
-                                <div class="small">
-                                    ₹{{ number_format(($customer->total_spent ?? 0) / max(1, $customer->orders_count ?? 0), 2) }}
+                                <div class="col-4">
+                                    <div class="h4 mb-0">₹570.99</div>
+                                    <div class="small text-muted">Avg Order</div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h6 class="card-title">Most used delivery</h6>
-                            <div class="small text-muted">{{ $customer->most_used_address ?? '—' }}</div>
-
-                            <hr>
-                            <h6 class="card-title">Rewards</h6>
-                            <div class="small text-muted">Balance: <strong>{{ $customer->loyalty_points ?? 0 }}</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Orders list -->
-            <div class="card mb-3">
-                <div class="card-header d-flex align-items-center justify-content-between">
-                    <h5 class="card-title mb-0">Order History</h5>
-                    <a href="#" class="btn btn-sm btn-outline-primary">View All Orders</a>
-                </div>
-                <div class="card-body p-0">
-                    <div class="table-responsive">
-                        <table class="table table-hover mb-0">
-                            <thead>
-                                <tr>
-                                    <th>Order ID</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th class="text-end">Total</th>
-                                    <th class="text-end">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @forelse($orders ?? [] as $order)
-                                    <tr>
-                                        <td>{{ $order->id }}</td>
-                                        <td>{{ isset($order->created_at) ? $order->created_at->format('Y-m-d') : '—' }}
-                                        </td>
-                                        <td>{{ $order->status ?? '—' }}</td>
-                                        <td class="text-end">₹{{ number_format($order->total ?? 0, 2) }}</td>
-                                        <td class="text-end"><a href="#"
-                                                class="btn btn-sm btn-outline-primary">View</a></td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td colspan="5" class="small text-muted">No orders found.</td>
-                                    </tr>
-                                @endforelse
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Notes & Contact history -->
-            <div class="row">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-lg-8">
+                    <!-- Orders list -->
                     <div class="card mb-3">
                         <div class="card-header d-flex align-items-center justify-content-between">
-                            <h5 class="card-title mb-0">Internal Notes</h5>
-                            <a href="#addNote" class="btn btn-sm btn-outline-primary">Add Note</a>
-                        </div>
-                        <div class="card-body">
-                            @if (isset($notes) && count($notes))
-                                <ul class="list-group list-group-flush">
-                                    @foreach ($notes as $note)
-                                        <li class="list-group-item">
-                                            <div class="small text-muted">
-                                                {{ isset($note->created_at) ? $note->created_at->format('Y-m-d H:i') : '—' }}
-                                                — <strong>{{ $note->author_name ?? 'Admin' }}</strong></div>
-                                            <div class="mt-1">{{ $note->message }}</div>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            @else
-                                <div class="small text-muted">No notes yet.</div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6">
-                    <div class="card mb-3">
-                        <div class="card-header d-flex align-items-center justify-content-between">
-                            <h5 class="card-title mb-0">Contact History</h5>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Send Message</a>
+                            <h5 class="card-title mb-0">Order History</h5>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View All Orders</a>
                         </div>
                         <div class="card-body p-0">
                             <div class="table-responsive">
                                 <table class="table table-hover mb-0">
                                     <thead>
                                         <tr>
+                                            <th>Order ID</th>
                                             <th>Date</th>
-                                            <th>Type</th>
-                                            <th>Summary</th>
+                                            <th>Status</th>
+                                            <th class="text-end">Total</th>
+                                            <th class="text-end">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse($contactHistory ?? [] as $c)
-                                            <tr>
-                                                <td>{{ isset($c->created_at) ? $c->created_at->format('Y-m-d') : '—' }}
-                                                </td>
-                                                <td>{{ $c->type ?? '—' }}</td>
-                                                <td>{{ $c->summary ?? '—' }}</td>
-                                            </tr>
-                                        @empty
-                                            <tr>
-                                                <td colspan="3" class="small text-muted">No contact history.</td>
-                                            </tr>
-                                        @endforelse
+                                        <tr>
+                                            <td>#2001</td>
+                                            <td>2025-03-12</td>
+                                            <td>Delivered</td>
+                                            <td class="text-end">₹1,234.50</td>
+                                            <td class="text-end"><a href="#"
+                                                    class="btn btn-sm btn-outline-primary">View</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#2000</td>
+                                            <td>2025-02-05</td>
+                                            <td>Returned</td>
+                                            <td class="text-end">₹0.00</td>
+                                            <td class="text-end"><a href="#"
+                                                    class="btn btn-sm btn-outline-primary">View</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#1999</td>
+                                            <td>2025-01-10</td>
+                                            <td>Delivered</td>
+                                            <td class="text-end">₹154.50</td>
+                                            <td class="text-end"><a href="#"
+                                                    class="btn btn-sm btn-outline-primary">View</a></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-        </div>
+                <div class="col-12 col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <h5 class="card-title mb-0">Internal Notes</h5>
+                            <a href="#addNote" class="btn btn-sm btn-outline-primary">Add Note</a>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="small text-muted">2025-03-12 10:00 —
+                                        <strong>Admin</strong>
+                                    </div>
+                                    <div class="mt-1">Coupon distribution started for campaign
+                                        SPRING25.
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="small text-muted">2025-02-01 09:15 —
+                                        <strong>Marketing</strong>
+                                    </div>
+                                    <div class="mt-1">Updated coupon terms and minimum order
+                                        value.</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 @endsection

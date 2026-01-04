@@ -3,12 +3,10 @@
 @section('content')
     <main class="content">
         <div class="container-fluid p-0">
-
             <div class="row mb-2 mb-xl-3">
                 <div class="col-auto d-none d-sm-block">
                     <h3><strong>Edit</strong> Coupon</h3>
                 </div>
-
                 <div class="col-auto ms-auto text-end mt-n1">
                     <a href="{{ route('coupons.index') }}" class="btn btn-secondary">Back to coupons</a>
                 </div>
@@ -26,7 +24,6 @@
                             <form method="POST" action="{{ route('coupons.update', $coupon->id ?? 0) }}">
                                 @csrf
                                 @method('PUT')
-
                                 <div class="row mb-3">
                                     <div class="mb-3 col-md-6">
                                         <label for="code" class="form-label">Coupon Code</label>
@@ -34,7 +31,6 @@
                                             value="SAVE20" readonly>
                                         <div class="small text-muted">Coupon code cannot be changed after creation.</div>
                                     </div>
-
                                     <div class="mb-3 col-md-6">
                                         <label for="status" class="form-label">Status</label>
                                         <select id="status" name="status" class="form-select">
@@ -124,43 +120,10 @@
                                     </tbody>
                                 </table>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-@endsection
-
-@section('scripts')
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Basic client-side validation for coupon edit form
-            const form = document.querySelector('form[action^="{{ route('
-                coupons.update ', ")');
-            // fallback: find form that contains #discount_value and #code
-            const altForm = form || (document.querySelector('form') && document.getElementById('discount_value') ?
-                document.querySelector('form') : null);
-            const usedForm = altForm;
-            if (usedForm) {
-                usedForm.addEventListener('submit', function(e) {
-                    const value = parseFloat(document.getElementById('discount_value').value || 0);
-                    const start = document.getElementById('start_date').value;
-                    const end = document.getElementById('end_date').value;
-                    if (!(value > 0)) {
-                        alert('Discount value must be greater than zero');
-                        e.preventDefault();
-                        return;
-                    }
-                    if (start && end && start > end) {
-                        alert('End date must be after start date');
-                        e.preventDefault();
-                        return;
-                    }
-                });
-            }
-        });
-    </script>
 @endsection

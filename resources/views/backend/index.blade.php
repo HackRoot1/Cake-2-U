@@ -3,15 +3,9 @@
 @section('content')
     <main class="content">
         <div class="container-fluid p-0">
-
             <div class="row mb-2 mb-xl-3">
                 <div class="col-auto d-none d-sm-block">
                     <h3><strong>Admin</strong> Dashboard</h3>
-                </div>
-
-                <div class="col-auto ms-auto text-end mt-n1">
-                    <a href="#" class="btn btn-outline-secondary me-2">Invite User</a>
-                    <a href="#" class="btn btn-primary">New Project</a>
                 </div>
             </div>
             <div class="row">
@@ -135,9 +129,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
+                
                 <div class="col-12 col-md-6 col-xxl-3 d-flex order-1 order-xxl-3">
                     <div class="card flex-fill w-100">
                         <div class="card-header">
@@ -191,6 +183,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-12 col-md-12 col-xxl-6 d-flex order-3 order-xxl-2">
                     <div class="card flex-fill w-100">
                         <div class="card-header">
@@ -214,6 +207,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-1">
                     <div class="card flex-fill">
                         <div class="card-header">
@@ -241,9 +235,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
+                
                 <div class="col-12 col-lg-8 col-xxl-9 d-flex">
                     <div class="card flex-fill">
                         <div class="card-header">
@@ -358,6 +350,7 @@
                         </table>
                     </div>
                 </div>
+
                 <div class="col-12 col-lg-4 col-xxl-3 d-flex">
                     <div class="card flex-fill w-100">
                         <div class="card-header">
@@ -384,7 +377,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </main>
 @endsection

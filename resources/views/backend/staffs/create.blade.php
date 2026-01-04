@@ -3,12 +3,10 @@
 @section('content')
     <main class="content">
         <div class="container-fluid p-0">
-
             <div class="row mb-2 mb-xl-3">
                 <div class="col-auto d-none d-sm-block">
                     <h3><strong>Create</strong> Staff</h3>
                 </div>
-
                 <div class="col-auto ms-auto text-end mt-n1">
                     <a href="{{ route('staffs.index') }}" class="btn btn-secondary">Back to Staffs</a>
                 </div>
@@ -21,11 +19,9 @@
                             <h5 class="card-title">New Staff</h5>
                             <h6 class="card-subtitle text-muted">Create a new staff by filling out the form below.</h6>
                         </div>
-
                         <div class="card-body">
                             <form method="POST" action="{{ route('staffs.store') }}">
                                 @csrf
-
                                 <div class="row mb-3">
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label" for="inputState">Role</label>

@@ -13,10 +13,8 @@
             </div>
 
             <div class="row">
-
                 <div class="col-12">
                     <div class="card">
-
                         <div class="card-body">
                             <ul class="nav nav-tabs mb-3">
                                 <li class="nav-item">
@@ -80,24 +78,6 @@
                                                 </select>
                                             </div>
 
-                                            <div class="col-6 col-md-3">
-                                                <div class="d-flex">
-                                                    <input type="date" name="created_from" class="form-control me-2"
-                                                        value="{{ request('created_from') }}" placeholder="Created from">
-                                                    <input type="date" name="created_to" class="form-control"
-                                                        value="{{ request('created_to') }}" placeholder="Created to">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-6 col-md-3">
-                                                <div class="d-flex">
-                                                    <input type="date" name="expiry_from" class="form-control me-2"
-                                                        value="{{ request('expiry_from') }}" placeholder="Expiry from">
-                                                    <input type="date" name="expiry_to" class="form-control"
-                                                        value="{{ request('expiry_to') }}" placeholder="Expiry to">
-                                                </div>
-                                            </div>
-
                                             <div class="col-6 col-md-2">
                                                 <select name="sort" class="form-select">
                                                     <option value="code_asc"
@@ -132,6 +112,20 @@
                                                     </option>
                                                 </select>
                                             </div>
+
+                                            <div class="col-6 col-md-3">
+                                                <div class="d-flex">
+                                                    <input type="date" name="expiry_to" class="form-control"
+                                                        value="{{ request('expiry_to') }}" placeholder="Expiry to">
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-md-3">
+                                                <div class="d-flex">
+                                                    <input type="date" name="expiry_from" class="form-control me-2"
+                                                        value="{{ request('expiry_from') }}" placeholder="Expiry from">
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
 
@@ -144,129 +138,142 @@
                                         quicker updates.</div>
                                 </form>
                             </div>
-                        </div>
 
-                        <div class="card-body">
-                            <form id="bulkActionForm" method="POST" action="{{ route('coupons.bulk') }}">
-                                @csrf
-                                <input type="hidden" name="action" id="bulkActionInput" value="">
+                            <div class="d-flex mb-2 align-items-center justify-content-end">
+                                <select id="bulkActionSelect" class="form-select w-auto me-2">
+                                    <option value="">Bulk actions</option>
+                                    <option value="activate">Activate</option>
+                                    <option value="deactivate">Deactivate</option>
+                                    <option value="delete">Delete</option>
+                                    <option value="extend">Extend expiry</option>
+                                    <option value="adjust">Adjust discount</option>
+                                </select>
+                                <button type="button" class="btn btn-sm btn-primary" id="applyBulkBtn">Apply</button>
+                            </div>
 
-                                <div class="d-flex mb-2 align-items-center">
-                                    <select id="bulkActionSelect" class="form-select w-auto me-2">
-                                        <option value="">Bulk actions</option>
-                                        <option value="activate">Activate</option>
-                                        <option value="deactivate">Deactivate</option>
-                                        <option value="delete">Delete</option>
-                                        <option value="extend">Extend expiry</option>
-                                        <option value="adjust">Adjust discount</option>
-                                    </select>
-                                    <button type="button" class="btn btn-sm btn-primary"
-                                        id="applyBulkBtn">Apply</button>
-                                    <div class="ms-3 small text-muted">Select coupons and pick an action</div>
-                                </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"><input type="checkbox" id="selectAll"></th>
+                                            <th scope="col">Code</th>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">Type</th>
+                                            <th scope="col">Value</th>
+                                            <th scope="col">Validity</th>
+                                            <th scope="col">Usage</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col" class="text-end">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" disabled></td>
+                                            <th scope="row"><a href="{{ route('coupons.show', 1) }}">SAVE20</a>
+                                            </th>
+                                            <td>
+                                                <div class="text-truncate cell-truncate">20% off on orders above ₹500
+                                                </div>
+                                            </td>
+                                            <td>Percentage</td>
+                                            <td>20%</td>
+                                            <td>
+                                                <div>
+                                                    From: 2025-01-01<br>
+                                                    To: 2025-03-31
+                                                </div>
+                                            </td>
+                                            <td>150 / 1000</td>
+                                            <td><span class="badge bg-success">Active</span></td>
+                                            <td class="text-end">
+                                                <div class="d-inline-flex gap-1">
+                                                    <a href="{{ route('coupons.show', 1) }}"
+                                                        class="btn btn-sm btn-outline-primary">View</a>
+                                                    <a href="{{ route('coupons.edit', 1) }}"
+                                                        class="btn btn-sm btn-outline-secondary">Edit</a>
+                                                    <form method="POST" action="{{ route('coupons.destroy', 1) }}"
+                                                        class="d-inline" onsubmit="return confirm('Delete coupon?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"
+                                                            class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
 
-                                <div class="table-responsive">
-                                    <table class="table table-hover mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col"><input type="checkbox" id="selectAll"></th>
-                                                <th scope="col">Code</th>
-                                                <th scope="col">Description</th>
-                                                <th scope="col">Type</th>
-                                                <th scope="col">Value</th>
-                                                <th scope="col">Validity</th>
-                                                <th scope="col">Usage</th>
-                                                <th scope="col">Status</th>
-                                                <th scope="col" class="text-end">Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><input type="checkbox" disabled></td>
-                                                <th scope="row"><a href="{{ route('coupons.show', 1) }}">SAVE20</a>
-                                                </th>
-                                                <td>
-                                                    <div class="text-truncate cell-truncate">20% off on orders above ₹500
-                                                    </div>
-                                                </td>
-                                                <td>Percentage</td>
-                                                <td>20%</td>
-                                                <td>2025-01-01 → 2025-03-31</td>
-                                                <td>150 / 1000</td>
-                                                <td><span class="badge bg-success">Active</span></td>
-                                                <td class="text-end">
-                                                    <div class="d-inline-flex gap-1">
-                                                        <a href="{{ route('coupons.show', 1) }}"
-                                                            class="btn btn-sm btn-outline-primary">View</a>
-                                                        <a href="{{ route('coupons.edit', 1) }}"
-                                                            class="btn btn-sm btn-outline-secondary">Edit</a>
-                                                        <form method="POST"
-                                                            action="{{ route('coupons.deactivate', 1) }}"
-                                                            class="d-inline">
-                                                            @csrf
-                                                            <button type="submit"
-                                                                class="btn btn-sm btn-outline-warning">Deactivate</button>
-                                                        </form>
-                                                        <form method="POST" action="{{ route('coupons.destroy', 1) }}"
-                                                            class="d-inline" onsubmit="return confirm('Delete coupon?');">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit"
-                                                                class="btn btn-sm btn-outline-danger">Delete</button>
-                                                        </form>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <th scope="row"><a href="{{ route('coupons.show', 2) }}">WELCOME10</a>
+                                            </th>
+                                            <td>
+                                                <div class="text-truncate cell-truncate">Flat ₹10 off for first orders
+                                                </div>
+                                            </td>
+                                            <td>Fixed</td>
+                                            <td>₹10</td>
+                                            <td>
+                                                <div>
+                                                    From: 2025-01-01<br>
+                                                    To: 2025-03-31
+                                                </div>
+                                            </td>
+                                            <td>20 / 200</td>
+                                            <td><span class="badge bg-secondary">Inactive</span></td>
+                                            <td class="text-end">
+                                                <div class="d-inline-flex gap-1">
+                                                    <a href="{{ route('coupons.show', 2) }}"
+                                                        class="btn btn-sm btn-outline-primary">View</a>
+                                                    <a href="{{ route('coupons.edit', 2) }}"
+                                                        class="btn btn-sm btn-outline-secondary">Edit</a>
+                                                    <form method="POST" action="{{ route('coupons.destroy', 1) }}"
+                                                        class="d-inline" onsubmit="return confirm('Delete coupon?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"
+                                                            class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
 
-                                            <tr>
-                                                <td><input type="checkbox"></td>
-                                                <th scope="row"><a href="{{ route('coupons.show', 2) }}">WELCOME10</a>
-                                                </th>
-                                                <td>
-                                                    <div class="text-truncate cell-truncate">Flat ₹10 off for first orders
-                                                    </div>
-                                                </td>
-                                                <td>Fixed</td>
-                                                <td>₹10</td>
-                                                <td>2024-06-01 → 2026-06-01</td>
-                                                <td>20 / 200</td>
-                                                <td><span class="badge bg-secondary">Inactive</span></td>
-                                                <td class="text-end">
-                                                    <div class="d-inline-flex gap-1">
-                                                        <a href="{{ route('coupons.show', 2) }}"
-                                                            class="btn btn-sm btn-outline-primary">View</a>
-                                                        <a href="{{ route('coupons.edit', 2) }}"
-                                                            class="btn btn-sm btn-outline-secondary">Edit</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td><input type="checkbox"></td>
-                                                <th scope="row"><a href="{{ route('coupons.show', 3) }}">VIP50</a>
-                                                </th>
-                                                <td>
-                                                    <div class="text-truncate cell-truncate">50% off for VIP customers only
-                                                    </div>
-                                                </td>
-                                                <td>Percentage</td>
-                                                <td>50% (max ₹500)</td>
-                                                <td>2023-09-05 → 2024-09-05</td>
-                                                <td>0 / 500</td>
-                                                <td><span class="badge bg-danger">Expired</span></td>
-                                                <td class="text-end">
-                                                    <div class="d-inline-flex gap-1">
-                                                        <a href="{{ route('coupons.show', 3) }}"
-                                                            class="btn btn-sm btn-outline-primary">View</a>
-                                                        <a href="{{ route('coupons.edit', 3) }}"
-                                                            class="btn btn-sm btn-outline-secondary">Edit</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </form>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <th scope="row"><a href="{{ route('coupons.show', 3) }}">VIP50</a>
+                                            </th>
+                                            <td>
+                                                <div class="text-truncate cell-truncate">50% off for VIP customers only
+                                                </div>
+                                            </td>
+                                            <td>Percentage</td>
+                                            <td>50% (max ₹500)</td>
+                                            <td>
+                                                <div>
+                                                    From: 2025-01-01<br>
+                                                    To: 2025-03-31
+                                                </div>
+                                            </td>
+                                            <td>0 / 500</td>
+                                            <td><span class="badge bg-danger">Expired</span></td>
+                                            <td class="text-end">
+                                                <div class="d-inline-flex gap-1">
+                                                    <a href="{{ route('coupons.show', 3) }}"
+                                                        class="btn btn-sm btn-outline-primary">View</a>
+                                                    <a href="{{ route('coupons.edit', 3) }}"
+                                                        class="btn btn-sm btn-outline-secondary">Edit</a>
+                                                    <form method="POST" action="{{ route('coupons.destroy', 1) }}"
+                                                        class="d-inline" onsubmit="return confirm('Delete coupon?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"
+                                                            class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
 
 
@@ -308,49 +315,4 @@
             </div>
         </div>
     </main>
-@endsection
-
-@section('scripts')
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const selectAll = document.getElementById('selectAll');
-            const checkboxes = document.querySelectorAll('input[name="ids[]"]');
-            if (selectAll) {
-                selectAll.addEventListener('change', function() {
-                    checkboxes.forEach(cb => cb.checked = selectAll.checked);
-                });
-            }
-
-            const applyBtn = document.getElementById('applyBulkBtn');
-            applyBtn && applyBtn.addEventListener('click', function() {
-                const action = document.getElementById('bulkActionSelect').value;
-                if (!action) {
-                    alert('Please choose a bulk action');
-                    return;
-                }
-                const selected = Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.value);
-                if (selected.length === 0) {
-                    alert('Select at least one coupon');
-                    return;
-                }
-                if (action === 'delete' && !confirm('Delete selected coupons?')) return;
-                if (action === 'extend') {
-                    const date = prompt('Enter new expiry date (YYYY-MM-DD):');
-                    if (!date) return;
-                    alert('Will extend expiry to ' + date + ' for ' + selected.length +
-                    ' coupons (sample)');
-                    return;
-                }
-                if (action === 'adjust') {
-                    const value = prompt('Enter discount (e.g., 15 or 10%):');
-                    if (!value) return;
-                    alert('Will set discount to ' + value + ' for ' + selected.length +
-                    ' coupons (sample)');
-                    return;
-                }
-                document.getElementById('bulkActionInput').value = action;
-                document.getElementById('bulkActionForm').submit();
-            });
-        });
-    </script>
 @endsection

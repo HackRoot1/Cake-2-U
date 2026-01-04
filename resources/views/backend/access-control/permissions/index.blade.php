@@ -3,28 +3,21 @@
 @section('content')
     <main class="content">
         <div class="container-fluid p-0">
-
-
-
             <div class="row mb-2 mb-xl-3">
                 <div class="col-auto d-none d-sm-block">
                     <h3><strong>Permissions</strong> Dashboard</h3>
                 </div>
-
                 <div class="col-auto ms-auto text-end mt-n1">
                     <a href="{{ route('permissions.create') }}" class="btn btn-primary">New Permission</a>
                 </div>
             </div>
 
             <div class="row">
-
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header d-flex flex-column flex-md-row align-items-md-center justify-content-between">
-                            <div>
-                                <h5 class="card-title mb-0">Permissions</h5>
-                                <h6 class="card-subtitle text-muted">Manage permissions — search, filter, sort and paginate results.</h6>
-                            </div>
+                        <div class="card-header">
+                            <h5 class="card-title">Permissions</h5>
+                            <h6 class="card-subtitle text-muted">Manage permissions — search, filter, sort and paginate results.</h6>
                         </div>
 
                         <div class="card-body">
@@ -70,7 +63,7 @@
                                         <td>Administrator</td>
                                         <td>2025-12-01</td>
                                         <td class="text-end">
-                                            <a href="{{ route('roles.edit', 1) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                            <a href="{{ route('permissions.edit', 1) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
                                             <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
                                         </td>
                                     </tr>
@@ -79,7 +72,7 @@
                                         <td>Editor</td>
                                         <td>2025-11-15</td>
                                         <td class="text-end">
-                                            <a href="{{ route('roles.edit', 2) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                            <a href="{{ route('permissions.edit', 2) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
                                             <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
                                         </td>
                                     </tr>
@@ -88,7 +81,7 @@
                                         <td>Guest</td>
                                         <td>2025-10-08</td>
                                         <td class="text-end">
-                                            <a href="{{ route('roles.edit', 3) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                            <a href="{{ route('permissions.edit', 3) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
                                             <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
                                         </td>
                                     </tr>

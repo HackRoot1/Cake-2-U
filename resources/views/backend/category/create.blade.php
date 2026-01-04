@@ -34,7 +34,7 @@
 
                                     <div class="mb-3 col-md-6">
                                         <label for="slug" class="form-label">Slug / URL</label>
-                                        <input type="text" class="form-control" id="slug" placeholder="auto-generated" value="chocolate">
+                                        <input type="text" class="form-control" id="slug" placeholder="auto-generated" value="chocolate" readonly>
                                     </div>
                                 </div>
 
@@ -63,7 +63,7 @@
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Category Image (thumbnail)</label>
                                         <div class="d-flex align-items-center gap-3">
-                                            <img src="/img/placeholder-150x150.png" alt="thumb" style="width:80px;height:80px;object-fit:cover;border-radius:4px;" />
+                                            <img src="https://placehold.co/150x150" alt="thumb" style="width:80px;height:80px;object-fit:cover;border-radius:4px;" />
                                             <div>
                                                 <input type="file" class="form-control">
                                                 <div class="small text-muted mt-1">Accepted: jpg, png. Max 2MB</div>

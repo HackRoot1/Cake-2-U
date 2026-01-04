@@ -13,31 +13,17 @@
                     <a href="{{ route('customers.index') }}" class="btn btn-secondary me-2">Back to customers</a>
 
                     <div class="btn-group">
-                        <a href="{{ route('customers.edit', $customer->id ?? 0) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ route('customers.edit', 1) }}" class="btn btn-primary">Edit</a>
                         <button class="btn btn-outline-primary" onclick="window.location='#sendPromo'">Send Promo</button>
-                        @if(isset($customer->status) && $customer->status == 'active')
-                            <form method="POST" action="{{ route('customers.block', $customer->id ?? 0) }}" class="d-inline">
-                                @csrf
-                                <button type="submit" class="btn btn-outline-dark">Block</button>
-                            </form>
-                        @else
-                            <form method="POST" action="{{ route('customers.unblock', $customer->id ?? 0) }}" class="d-inline">
-                                @csrf
-                                <button type="submit" class="btn btn-success">Unblock</button>
-                            </form>
-                        @endif
+                        <button class="btn btn-outline-dark">Block</button>
 
                         <div class="btn-group ms-2">
                             <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
-                                    <form method="POST" action="{{ route('customers.destroy', $customer->id ?? 0) }}" onsubmit="return confirm('Delete customer and all related data?');">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="dropdown-item text-danger">Delete Customer</button>
-                                    </form>
+                                    <button class="dropdown-item text-danger" onclick="return confirm('Delete customer and all related data?')">Delete Customer</button>
                                 </li>
-                                <li><a class="dropdown-item" href="{{ route('customers.export', $customer->id ?? 0) }}">Export Data</a></li>
+                                <li><a class="dropdown-item" href="#">Export Data</a></li>
                                 <li><a class="dropdown-item" href="#merge">Merge Duplicates</a></li>
                             </ul>
                         </div>
@@ -50,21 +36,17 @@
                     <!-- Profile card -->
                     <div class="card mb-3">
                         <div class="card-body text-center">
-                            <img src="{{ $customer->avatar_url ?? asset('img/avatars/avatar.jpg') }}" alt="Profile" class="rounded-circle img-fluid" style="width:120px;height:120px;object-fit:cover;">
+                            <img src="/img/avatars/avatar.jpg" alt="Profile" class="rounded-circle img-fluid" style="width:120px;height:120px;object-fit:cover;">
 
-                            <h4 class="mt-3 mb-0">{{ ($customer->first_name ?? '') . ' ' . ($customer->last_name ?? '') ?: 'Unknown' }}</h4>
-                            <div class="small text-muted mb-2">{{ $customer->email ?? '—' }}</div>
+                            <h4 class="mt-3 mb-0">Jane Smith</h4>
+                            <div class="small text-muted mb-2">jane.smith@example.com</div>
 
                             <div class="mb-2">
-                                @if(isset($customer->status) && $customer->status == 'active')
                                     <span class="badge bg-success">Active</span>
-                                @else
-                                    <span class="badge bg-secondary">Inactive</span>
-                                @endif
-                            </div>
+                                </div>
 
                             <div class="d-grid gap-2">
-                                <a href="{{ route('customers.edit', $customer->id ?? 0) }}" class="btn btn-primary">Edit Customer</a>
+                                <a href="{{ route('customers.edit', 1) }}" class="btn btn-primary">Edit Customer</a>
                                 <button class="btn btn-outline-info" onclick="location.href='#addCredit'">Add Credit / Discount</button>
                                 <button class="btn btn-outline-warning" onclick="location.href='#sendPromo'">Send Promotional Message</button>
                             </div>
@@ -74,27 +56,27 @@
                             <li class="list-group-item">
                                 <strong>Contact</strong>
                                 <div class="small text-muted mt-1">
-                                    Email: <a href="mailto:{{ $customer->email ?? '' }}">{{ $customer->email ?? '—' }}</a><br>
-                                    Phone: <a href="tel:{{ $customer->phone ?? '' }}">{{ $customer->phone ?? '—' }}</a>
+                                    Email: <a href="mailto:jane.smith@example.com">jane.smith@example.com</a><br>
+                                    Phone: <a href="tel:+15559876543">+1 (555) 987-6543</a>
                                 </div>
                             </li>
 
                             <li class="list-group-item">
                                 <strong>Account</strong>
                                 <div class="small text-muted mt-1">
-                                    Registered: {{ isset($customer->created_at) ? $customer->created_at->format('Y-m-d') : '—' }}<br>
-                                    Last Login: {{ isset($customer->last_login_at) ? $customer->last_login_at->format('Y-m-d H:i') : '—' }}
+                                    Registered: 2023-04-15<br>
+                                    Last Login: 2025-12-31 18:45
                                 </div>
                             </li>
 
                             <li class="list-group-item">
                                 <strong>Loyalty</strong>
-                                <div class="small text-muted mt-1">Points: <strong>{{ $customer->loyalty_points ?? 0 }}</strong></div>
+                                <div class="small text-muted mt-1">Points: <strong>450</strong></div>
                             </li>
 
                             <li class="list-group-item">
                                 <strong>Referral</strong>
-                                <div class="small text-muted mt-1">Referred by: {{ $customer->referred_by_name ?? '—' }}</div>
+                                <div class="small text-muted mt-1">Referred by: Alex Johnson</div>
                             </li>
                         </ul>
                     </div>
@@ -105,27 +87,28 @@
                             <h5 class="card-title mb-0">Saved Addresses</h5>
                         </div>
                         <div class="card-body">
-                            @if(isset($addresses) && count($addresses))
                                 <ul class="list-group list-group-flush">
-                                    @foreach($addresses as $addr)
-                                        <li class="list-group-item d-flex justify-content-between align-items-start">
-                                            <div>
-                                                <div class="fw-bold">{{ $addr->label ?? 'Address' }}</div>
-                                                <div class="small text-muted">{{ $addr->line1 }}, {{ $addr->city }} {{ $addr->postcode }}</div>
-                                            </div>
-                                            <div class="btn-group">
-                                                <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
-                                                <form method="POST" action="#" class="d-inline">
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-                                                </form>
-                                            </div>
-                                        </li>
-                                    @endforeach
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <div class="fw-bold">Home</div>
+                                            <div class="small text-muted">123 Main St, Springfield 12345</div>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <div class="fw-bold">Work</div>
+                                            <div class="small text-muted">456 Office Rd, Springfield 12345</div>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                        </div>
+                                    </li>
                                 </ul>
-                            @else
-                                <div class="small text-muted">No saved addresses.</div>
-                            @endif
                         </div>
                     </div>
 
@@ -135,26 +118,17 @@
                             <h5 class="card-title mb-0">Payment Methods</h5>
                         </div>
                         <div class="card-body">
-                            @if(isset($payments) && count($payments))
                                 <ul class="list-group list-group-flush">
-                                    @foreach($payments as $p)
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                            <div class="small">
-                                                {{ strtoupper($p->brand ?? 'Card') }} •••• {{ $p->last4 ?? '****' }} <span class="text-muted">(Exp {{ $p->exp_month }}/{{ $p->exp_year }})</span>
-                                            </div>
-                                            <div>
-                                                <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
-                                                <form method="POST" action="#" class="d-inline">
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-                                                </form>
-                                            </div>
-                                        </li>
-                                    @endforeach
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div class="small">
+                                            VISA •••• 4242 <span class="text-muted">(Exp 12/2026)</span>
+                                        </div>
+                                        <div>
+                                            <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                        </div>
+                                    </li>
                                 </ul>
-                            @else
-                                <div class="small text-muted">No payment methods on file.</div>
-                            @endif
                         </div>
                     </div>
                 </div>
@@ -168,18 +142,18 @@
                                     <h6 class="card-title">Order Summary</h6>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div>
-                                            <div class="h4 mb-0">{{ $customer->orders_count ?? 0 }}</div>
+                                            <div class="h4 mb-0">12</div>
                                             <div class="small text-muted">Total Orders</div>
                                         </div>
                                         <div class="text-end">
-                                            <div class="h5 mb-0">₹{{ number_format($customer->total_spent ?? 0, 2) }}</div>
+                                            <div class="h5 mb-0">₹12,345.67</div>
                                             <div class="small text-muted">Total Spent</div>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="d-flex justify-content-between">
                                         <div class="small text-muted">Avg order</div>
-                                        <div class="small">₹{{ number_format(($customer->total_spent ?? 0) / max(1, ($customer->orders_count ?? 0)), 2) }}</div>
+                                        <div class="small">₹1,028.81</div>
                                     </div>
                                 </div>
                             </div>
@@ -189,11 +163,11 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h6 class="card-title">Most used delivery</h6>
-                                    <div class="small text-muted">{{ $customer->most_used_address ?? '—' }}</div>
+                                    <div class="small text-muted">123 Main St, Springfield</div>
 
                                     <hr>
                                     <h6 class="card-title">Rewards</h6>
-                                    <div class="small text-muted">Balance: <strong>{{ $customer->loyalty_points ?? 0 }}</strong></div>
+                                    <div class="small text-muted">Balance: <strong>450</strong></div>
                                 </div>
                             </div>
                         </div>
@@ -218,19 +192,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse($orders ?? [] as $order)
-                                            <tr>
-                                                <td>{{ $order->id }}</td>
-                                                <td>{{ isset($order->created_at) ? $order->created_at->format('Y-m-d') : '—' }}</td>
-                                                <td>{{ $order->status ?? '—' }}</td>
-                                                <td class="text-end">₹{{ number_format($order->total ?? 0, 2) }}</td>
-                                                <td class="text-end"><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
-                                            </tr>
-                                        @empty
-                                            <tr>
-                                                <td colspan="5" class="small text-muted">No orders found.</td>
-                                            </tr>
-                                        @endforelse
+                                        <tr>
+                                            <td>#1001</td>
+                                            <td>2025-12-31</td>
+                                            <td>Delivered</td>
+                                            <td class="text-end">₹1,234.50</td>
+                                            <td class="text-end"><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#1000</td>
+                                            <td>2025-11-15</td>
+                                            <td>Cancelled</td>
+                                            <td class="text-end">₹0.00</td>
+                                            <td class="text-end"><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#999</td>
+                                            <td>2025-10-01</td>
+                                            <td>Processing</td>
+                                            <td class="text-end">₹2,345.00</td>
+                                            <td class="text-end"><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -246,18 +228,16 @@
                                     <a href="#addNote" class="btn btn-sm btn-outline-primary">Add Note</a>
                                 </div>
                                 <div class="card-body">
-                                    @if(isset($notes) && count($notes))
                                         <ul class="list-group list-group-flush">
-                                            @foreach($notes as $note)
-                                                <li class="list-group-item">
-                                                    <div class="small text-muted">{{ isset($note->created_at) ? $note->created_at->format('Y-m-d H:i') : '—' }} — <strong>{{ $note->author_name ?? 'Admin' }}</strong></div>
-                                                    <div class="mt-1">{{ $note->message }}</div>
-                                                </li>
-                                            @endforeach
+                                            <li class="list-group-item">
+                                                <div class="small text-muted">2025-12-31 18:00 — <strong>Admin</strong></div>
+                                                <div class="mt-1">Customer requested delivery time change.</div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="small text-muted">2025-11-20 09:15 — <strong>Support</strong></div>
+                                                <div class="mt-1">Resolved refund for order #1000.</div>
+                                            </li>
                                         </ul>
-                                    @else
-                                        <div class="small text-muted">No notes yet.</div>
-                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -279,17 +259,16 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @forelse($contactHistory ?? [] as $c)
-                                                    <tr>
-                                                        <td>{{ isset($c->created_at) ? $c->created_at->format('Y-m-d') : '—' }}</td>
-                                                        <td>{{ $c->type ?? '—' }}</td>
-                                                        <td>{{ $c->summary ?? '—' }}</td>
-                                                    </tr>
-                                                @empty
-                                                    <tr>
-                                                        <td colspan="3" class="small text-muted">No contact history.</td>
-                                                    </tr>
-                                                @endforelse
+                                                <tr>
+                                                    <td>2025-12-31</td>
+                                                    <td>Email</td>
+                                                    <td>Sent promo code WINTER25</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2025-11-15</td>
+                                                    <td>Phone</td>
+                                                    <td>Caller reported missing item in order #1000</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

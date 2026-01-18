@@ -13,13 +13,38 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+
+            $table->string('user_code')->unique(); // e.g. ST001, AD001, CU001
+            $table->string('name');  // firstname, lastname
+            $table->string('email')->unique();     // unique email
+            $table->string('username')->unique()->nullable();  // unique username 
+
+            $table->string('password')->nullable();
+            // nullable → required for social login users
+
+            $table->boolean('is_newsletter_subscribed')->default(false);
+
+            $table->enum('status', [
+                'active',
+                'inactive',
+                'blocked'
+            ])->default('active');
+
+            $table->string('profile_photo')->nullable();
+            $table->string('provider'); // google, facebook, github
+            $table->string('provider_user_id');            
+            
+            $table->timestamp('last_login')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            
+            // Remember Me functionality
             $table->rememberToken();
+            
             $table->timestamps();
+            
+            $table->unique(['provider', 'provider_user_id']);
         });
+
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();

@@ -47,12 +47,12 @@
                                                 Sign in with Facebook</a
                                             >
                                             <a
-                                                class="btn btn-microsoft btn-lg"
+                                                class="btn btn-github btn-lg"
                                                 href="#"
                                                 ><i
-                                                    class="fab fa-fw fa-microsoft"
+                                                    class="fab fa-fw fa-github"
                                                 ></i>
-                                                Sign in with Microsoft</a
+                                                Sign in with GitHub</a
                                             >
                                         </div>
                                         <div class="row">

@@ -374,10 +374,6 @@
                             </a>
                         </li>
 
-                        <li class="nav-item d-none d-md-block me-2">
-                            <span class="badge bg-success" title="All admin actions are logged instantly">Real-time logging enabled</span>
-                        </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-icon pe-md-0 dropdown-toggle" href="#" data-bs-toggle="dropdown">
                                 <img src="{{ asset('img/avatars/avatar.jpg') }}" class="avatar img-fluid rounded"

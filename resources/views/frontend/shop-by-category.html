@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    
+<!-- Mirrored from templates.hibootstrap.com/pinkbakery/default/shop-by-category.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 18 Jan 2026 14:55:44 GMT -->
+<head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Link of CSS files -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="assets/css/scrollcue.min.css">
+        <link rel="stylesheet" href="assets/css/remixicon.css">
+        <link rel="stylesheet" href="assets/css/header.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/footer.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        <link rel="stylesheet" href="assets/css/dark-theme.css">
+        
+        <title>PinkBakery - Dessert & Gift Shop HTML Template</title>
+        <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    </head>
+    <body>
+
+       <!--  Preloader Start -->
+        <div class="preloader-area" id="preloader">
+            <div class="spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <!--  Preloader End -->
+
+        <!-- Theme Switcher Start -->
+        <div class="switch-theme-mode">
+            <label id="switch" class="switch">
+                <input type="checkbox" onchange="toggleTheme()" id="slider">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <!-- Theme Switcher End -->
+
+        <!-- Custom Cursor -->
+        <div class="cursor"><span class="cursor-text"></span></div>
+        <div class="cursor-inner"></div>
+
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+
+                <!-- Top Navbar Start-->
+                <div class="navbar-top style-one bg-title">
+                    <div class="container style-one">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-4 text-lg-start text-center mb-lg-0 mb-2">
+                                <p class="position-relative text-white d-inline-block text-lg-start text-center fs-15 mb-0"><img src="assets/img/icons/clock-pink.svg" alt="Icon">Monday To Friday : 10.00 Am – 5.00 Pm</p>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 text-center ps-xxl-5 mb-lg-0 mb-2">
+                                <p class="position-relative text-white d-inline-block fs-15 mb-0 ms-xxl-5"><img src="assets/img/icons/delivery-truck.svg" alt="Icon">Free Delivery For Orders Above $100!</p>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-12 mb-lg-0 mb-1">
+                                <div class="social-share d-flex flex-wrap align-items-center justify-content-lg-end justify-content-center">
+                                    <span class="fs-15 text-white">Follow Us:</span>
+                                    <ul class="social-profile style-six list-unstyled mb-0">
+                                        <li><a href="https://www.facebook.com/" target="_blank" class="d-flex flex-column align-items-center justify-content-center rounded-circle"><i class="ri-facebook-fill"></i></a></li>
+                                        <li><a href="https://x.com/?lang=en" target="_blank" class="d-flex flex-column align-items-center justify-content-center rounded-circle"><i class="ri-twitter-x-line"></i></a></li>
+                                        <li><a href="https://www.instagram.com/" target="_blank" class="d-flex flex-column align-items-center justify-content-center rounded-circle"><i class="ri-instagram-line"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/" target="_blank" class="d-flex flex-column align-items-center justify-content-center rounded-circle"><i class="ri-linkedin-fill"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Top Navbar End-->
+
+                <!-- Navbar Start -->
+                <div class="navbar-area style-one position-relative" id="navbar">
+                    <div class="container style-one">
+                        <div class="navbar-wrapper d-flex justify-content-between align-items-center">
+                            <a href="index.html" class="navbar-brand">
+                                <img src="assets/img/logo.png" alt="Logo" class="logo-light">
+                                <img src="assets/img/logo-white.png" alt="Logo" class="logo-dark">
+                            </a>
+                            <div class="menu-area me-auto">
+                                <div class="overlay"></div>
+                                <nav class="menu">
+                                    <div class="menu-mobile-header">
+                                        <button type="button" class="menu-mobile-arrow bg-transparent border-0"><i class="ri-arrow-left-s-line"></i></button>
+                                        <div class="menu-mobile-title"></div>
+                                        <button type="button" class="menu-mobile-close bg-transparent border-0"><i class="ri-close-line"></i></button>
+                                    </div>
+                                    <ul class="menu-section p-0 mb-0 lh-1">
+                                        <li class="menu-item-has-children">
+                                            <a href="javascript:void(0)">Home<i class="ri-add-line"></i></a>
+                                            <ul class="menu-subs menu-column-1">
+                                                <li class="list-item">
+                                                    <a href="index.html">Home - Cake Bakery</a>
+                                                </li>
+                                                <li class="list-item">
+                                                    <a href="index-2.html">Home - Ice Cream Shop</a>
+                                                </li>
+                                                <li class="list-item">
+                                                    <a href="index-3.html">Home - Gift Shop</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li class="menu-item-has-children">
+                                            <a href="javascript:void(0)" class="active">Shop<i class="ri-add-line"></i></a>
+                                            <ul class="menu-subs menu-column-1">
+                                                <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
+                                                <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
+                                                <li><a href="shop-grid.html">Shop Grid</a></li>
+                                                <li><a href="shop-by-category.html" class="active">Shop By Category</a></li>
+                                                <li><a href="shop-by-occasion.html">Shop By Occasions</a></li>
+                                                <li><a href="product-details.html">Product Details</a></li>
+                                                <li><a href="cart.html">Cart</a></li>
+                                                <li><a href="wishlist.html">Wishlist</a></li>
+                                                <li><a href="checkout.html">Checkout</a></li>
+                                                <li><a href="my-account.html">My Account</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <a href="javascript:void(0)">Pages<i class="ri-add-line"></i></a>
+                                            <ul class="menu-subs menu-column-1">
+                                                <li><a href="menu.html">Our Menu</a></li>
+                                                <li><a href="team.html">Team</a></li>
+                                                <li><a href="location-hours.html">Location & Hours</a></li>
+                                                <li><a href="testimonials.html">Testimonials</a></li>
+                                                <li><a href="pricing-package.html">Pricing Package</a></li>
+                                                <li><a href="gallery.html">Gallery</a></li>
+                                                <li><a href="faq.html">FAQ</a></li>
+                                                <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                                <li><a href="error-404.html">Error 404</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <a href="javascript:void(0)">Blog<i class="ri-add-line"></i></a>
+                                            <ul class="menu-subs menu-column-1">
+                                                <li class="menu-item-has-children"><a href="javascript:void(0)">Blog Layout<i class="ri-add-line"></i></a>
+                                                    <ul class="menu-subs menu-column-1">
+                                                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                                                        <li><a href="blog-grid.html">Blog Grid</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-item-has-children"><a href="javascript:void(0)">Blog Details Layout<i class="ri-add-line"></i></a>
+                                                    <ul class="menu-subs menu-column-1">
+                                                        <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
+                                                        <li><a href="blog-details-right-sidebar.html">Blog Details Right Sidebar</a></li>
+                                                        <li><a href="blog-details-no-sidebar.html">Blog Details No Sidebar</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-item-has-children"><a href="javascript:void(0)">Others<i class="ri-add-line"></i></a>
+                                                    <ul class="menu-subs menu-column-1">
+                                                        <li><a href="posts-by-author.html">Posts By Author</a></li>
+                                                        <li><a href="posts-by-date.html">Posts By Date</a></li>
+                                                        <li><a href="posts-by-category.html">Posts By Category</a></li>
+                                                        <li><a href="posts-by-tag.html">Posts By Tag</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="other-options d-flex flex-wrap align-items-center justify-content-end">
+                                <div class="option-item">
+                                    <ul class="option-list d-flex flex-wrap align-items-center list-unstyled mb-0">
+                                        <li>
+                                            <div class="mobile-options position-relative d-lg-none">
+                                                <button class="dropdown-toggle  text-center bg-transparent border-0 p-0 transition" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                                    <i class="ri-more-fill"></i>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-centered mobile-option-list top-1 border-0" data-bs-popper="static">
+                                                    <a href="contact.html" class="btn style-three position-relative z-1 round-10">Get In Touch</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <button  class="search-btn bg-transparent border-0 d-flex flex-wrap align-items-center dropdown-toggle text-center p-0 transition" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                                <img src="assets/img/icons/search-icon-large.svg" alt="Search Icon">
+                                            </button>
+                                            <div class="search-dropdown dropdown-menu dropdown-menu-right top-1 border-0" data-bs-popper="static">
+                                                <form class="search-popup position-relative" action="#">
+                                                    <input type="search" class="form-control text-para" placeholder="Search Here....">
+                                                    <button type="submit" class="position-absolute top-0 end-0 h-100 border-0 bg-transparent d-flex flex-column align-items-center justify-content-center"><i class="ri-search-2-line"></i></button>
+                                                </form>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="my-account.html" class="user-btn">
+                                                <img src="assets/img/icons/user-icon.svg" alt="User Icon">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="wishlist.html" class="wishlist-btn position-relative">
+                                                <img src="assets/img/icons/heart.svg" alt="Heart Icon">
+                                                <span class="fs-14 fw-normal position-absolute top-0 end-0 d-flex flex-column align-items-center justify-content-center rounded-circle bg_primary text-white">0</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="cart.html" class="cart-btn position-relative">
+                                                <img src="assets/img/icons/bag-black.svg" alt="Search Icon">
+                                                <span class="fs-14 fw-normal position-absolute top-0 end-0 d-flex flex-column align-items-center justify-content-center rounded-circle bg_primary text-white">0</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="option-item d-lg-block d-none">
+                                    <a href="contact.html" class="btn style-three position-relative z-1 round-10">Get In Touch</a>
+                                </div>
+                                <div class="option-item d-lg-none">
+                                    <button type="button" class="menu-mobile-trigger">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navbar End -->
+
+                <!-- Breadcrumb Section Start -->
+                <div class="breadcrumb-area position-relative z-1">
+                    <img src="assets/img/breadcrumb/br-dot-shape.png" alt="Shape" class="br-bg-shape position-absolute top-0 start-0 w-100 h-100 z-n1">
+                    <img src="assets/img/top-zigzag-shape.svg" alt="Shape" class="br-top-shape position-absolute top-0 start-0 w-100 z-n1">
+                    <img src="assets/img/bottom-zigzag-shape.svg" alt="Shape" class="br-bottom-shape position-absolute bottom-0 start-0 w-100 z-n1">
+                    <div class="container style-one text-center">
+                        <div class="row align-items-center">
+                            <div class="col-xxl-4 col-lg-3 col-md-2">
+                                <div class="br-img mb-sm-10">
+                                    <img src="assets/img/breadcrumb/br-img-3.png" alt="Image" class="d-block mx-auto">
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-lg-6 col-md-8 mb-sm-10">
+                                <h2 class="br-title fw-normal mb-12">Shop By Category</h2>
+                                <ul class="br-menu list-unstyled mb-0">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>Shop</li>
+                                </ul>
+                            </div>
+                            <div class="col-xxl-4 col-lg-3 col-md-2">
+                                <div class="br-img">
+                                    <img src="assets/img/breadcrumb/br-img-4.png" alt="Image" class="d-block mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Breadcrumb Section End -->
+
+                <!-- Shop Details Start -->
+                <div class="container style-one pt-120 pb-90">
+                    <ul class="nav nav-tabs list-unstyled product-tablist style-one d-flex align-items-center justify-content-center w-100 mb-40" role="tablist">
+                        <li class="nav-item border-0">
+                            <button class="nav-link border-0 active" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab">All</button>
+                        </li>
+                        <li class="nav-item border-0">
+                            <button class="nav-link border-0" data-bs-toggle="tab" data-bs-target="#cake" type="button" role="tab">Cake</button>
+                        </li>
+                        <li class="nav-item border-0">
+                            <button class="nav-link border-0" data-bs-toggle="tab" data-bs-target="#icecream" type="button" role="tab">Ice Cream</button>
+                        </li>
+                        <li class="nav-item border-0">
+                            <button class="nav-link border-0" data-bs-toggle="tab" data-bs-target="#dessert" type="button" role="tab">Desserts</button>
+                        </li>
+                        <li class="nav-item border-0">
+                            <button class="nav-link border-0" data-bs-toggle="tab" data-bs-target="#cookies" type="button" role="tab">Cookies</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content product-tab-content">
+                        <div class="tab-pane fade show active" id="all" role="tabpanel">
+                            <div class="row justify-content-center">
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/cake/product-7.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Birthday Cake</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$70.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/cake/product-8.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Blue Light Cake</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$40.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/cake/product-9.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Sweet Bread Cake</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$70.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/cake/product-10.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Spider Vanila Cake</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$70.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-1.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Mango Passion Fruit</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$50.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-2.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Chocolate Ice Cream</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$30.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-12.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Intelligent Granite Gloves</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$90.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-13.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Brownie Sponge Cake</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$80.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-8.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Chocolate Chip Cookie</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$30.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-9.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Oatmeal Cream Cookie</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$54.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-10.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Chocolate bar Cookie</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$90.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-11.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Stramilk Bar Pie Cookie</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$80.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="cake" role="tabpanel">
+                            <div class="row justify-content-center">
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/cake/product-7.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Birthday Cake</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$70.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/cake/product-8.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Blue Light Cake</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$40.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/cake/product-9.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Sweet Bread Cake</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$70.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/cake/product-10.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Spider Vanila Cake</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$70.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="icecream" role="tabpanel">
+                            <div class="row justify-content-center">
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-1.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Mango Passion Fruit</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$50.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-2.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Chocolate Ice Cream</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$30.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-12.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Intelligent Granite Gloves</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$90.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-13.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Brownie Sponge Cake</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$80.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="dessert" role="tabpanel">
+                            <div class="row justify-content-center">
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-8.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Chocolate Chip Cookie</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$30.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-9.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Oatmeal Cream Cookie</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$54.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-10.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Chocolate bar Cookie</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$90.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-11.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Stramilk Bar Pie Cookie</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$80.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="cookies" role="tabpanel">
+                            <div class="row justify-content-center">
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/cake/product-9.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Sweet Bread Cake</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$70.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/cake/product-10.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Spider Vanila Cake</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$70.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-1.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Mango Passion Fruit</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$50.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/icecream/product-13.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Brownie Sponge Cake</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$80.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/cake/product-8.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Chocolate Chip Cookie</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$30.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/cake/product-9.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Oatmeal Cream Cookie</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$54.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6">
+                                    <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30  transition">
+                                        <div class="product-img d-flex flex-column align-items-center justify-content-center rounded-circle mx-auto">
+                                            <img src="assets/img/products/cake/product-11.png" alt="Product Image" class="d-block mx-auto">
+                                        </div>
+                                        <ul class="rating list-unstyled mb-15">
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                            <li><img src="assets/img/icons/star-1.svg" alt="Icon"></li>
+                                        </ul>
+                                        <h3 class="fs-24"><a href="product-details.html" class="text-title link-hover-primary">Stramilk Bar Pie Cookie</a></h3>
+                                        <span class="product-price fs-xxl-18 d-block">$80.00</span>
+                                        <a href="cart.html" class="btn style-four position-relative z-1 round-10">Add To Cart</a>
+                                        <button class="add-to-wishlist position-absolute border-0 transition p-0 rounded-circle"><i class="ri-heart-line"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="page-nav pagination justify-content-center mb-0 mt-4">
+                            <li class="page-item">
+                                <a class="page-link d-flex flex-column align-items-center justify-content-center rounded-circle" href="shop-left-sidebar.html" aria-label="Previous">
+                                    <i class="ri-arrow-left-s-line"></i>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link d-flex flex-column align-items-center justify-content-center rounded-circle active" href="shop-left-sidebar.html">1</a></li>
+                            <li class="page-item"><a class="page-link d-flex flex-column align-items-center justify-content-center rounded-circle" href="shop-left-sidebar.html">2</a></li>
+                            <li class="page-item"><a class="page-link d-flex flex-column align-items-center justify-content-center rounded-circle" href="shop-left-sidebar.html">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link d-flex flex-column align-items-center justify-content-center rounded-circle" href="shop-left-sidebar.html" aria-label="Next">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Shop Details End -->
+
+                <!-- Footer Section Start -->
+                <footer class="footer-area style-one position-relative z-1 pt-120">
+                    <img src="assets/img/footer-dot-shape.png" alt="Shape" class="footer-dots position-absolute top-0 start-0 w-100 h-100 z-n1">
+                    <img src="assets/img/top-zigzag-shape.svg" alt="Shape" class="footer-top-shape position-absolute top-0 start-0 w-100 z-n1">
+                    <div class="footer-top position-relative z-1">
+                        <div class="container style-one pb-90">
+                            <h3 class="fs-20 fw-light text_primary text-center mb-50">We Are Popular On Instagram</h3>
+                            <div class="insta-slider-one swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/" target="_blank" class="insta-card style-one position-relative round-20">
+                                            <img src="assets/img/instagram/insta-1.jpg" alt="Image" class="round-20">
+                                            <span class="bg_secondary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i class="ri-instagram-line"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/" target="_blank" class="insta-card style-one position-relative round-20">
+                                            <img src="assets/img/instagram/insta-2.jpg" alt="Image" class="round-20">
+                                            <span class="bg_secondary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i class="ri-instagram-line"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/" target="_blank" class="insta-card style-one position-relative round-20">
+                                            <img src="assets/img/instagram/insta-3.jpg" alt="Image" class="round-20">
+                                            <span class="bg_secondary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i class="ri-instagram-line"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/" target="_blank" class="insta-card style-one position-relative round-20">
+                                            <img src="assets/img/instagram/insta-4.jpg" alt="Image" class="round-20">
+                                            <span class="bg_secondary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i class="ri-instagram-line"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/" target="_blank" class="insta-card style-one position-relative round-20">
+                                            <img src="assets/img/instagram/insta-5.jpg" alt="Image" class="round-20">
+                                            <span class="bg_secondary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i class="ri-instagram-line"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/" target="_blank" class="insta-card style-one position-relative round-20">
+                                            <img src="assets/img/instagram/insta-6.jpg" alt="Image" class="round-20">
+                                            <span class="bg_secondary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i class="ri-instagram-line"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/" target="_blank" class="insta-card style-one position-relative round-20">
+                                            <img src="assets/img/instagram/insta-1.jpg" alt="Image" class="round-20">
+                                            <span class="bg_secondary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i class="ri-instagram-line"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/" target="_blank" class="insta-card style-one position-relative round-20">
+                                            <img src="assets/img/instagram/insta-2.jpg" alt="Image" class="round-20">
+                                            <span class="bg_secondary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i class="ri-instagram-line"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/" target="_blank" class="insta-card style-one position-relative round-20">
+                                            <img src="assets/img/instagram/insta-3.jpg" alt="Image" class="round-20">
+                                            <span class="bg_secondary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i class="ri-instagram-line"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/" target="_blank" class="insta-card style-one position-relative round-20">
+                                            <img src="assets/img/instagram/insta-4.jpg" alt="Image" class="round-20">
+                                            <span class="bg_secondary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i class="ri-instagram-line"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/" target="_blank" class="insta-card style-one position-relative round-20">
+                                            <img src="assets/img/instagram/insta-5.jpg" alt="Image" class="round-20">
+                                            <span class="bg_secondary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i class="ri-instagram-line"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/" target="_blank" class="insta-card style-one position-relative round-20">
+                                            <img src="assets/img/instagram/insta-6.jpg" alt="Image" class="round-20">
+                                            <span class="bg_secondary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i class="ri-instagram-line"></i></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pt-120">
+                                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 pe-xxl-1">
+                                    <div class="footer-widget mb-30">
+                                        <a href="index.html" class="logo d-block mb-35">
+                                            <img src="assets/img/logo.png" alt="Logo" class="logo-light">
+                                            <img src="assets/img/logo-white.png" alt="Logo" class="logo-dark">
+                                        </a>
+                                        <ul class="contact-info list-unstyled mb-0">
+                                            <li class="position-relative">
+                                                <img src="assets/img/icons/pin-small.svg" alt="Icon">
+                                                <h6 class="font-primary fw-bold fs-18 text-title mb-6">Location</h6>
+                                                <p class="text-title mb-0">Madison Street Baltimore, NY 4508, USA</p>
+                                            </li>
+                                            <li class="position-relative">
+                                                <img src="assets/img/icons/mail-small.svg" alt="Icon">
+                                                <h6 class="font-primary fw-bold fs-18 text-title mb-6">Email</h6>
+                                                <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#c0a8a5acacaf80b0a9aeaba2a1aba5b2b9eea3afad" class="link style-two fw-normal"><span class="__cf_email__" data-cfemail="9cf4f9f0f0f3dcecf5f2f7fefdf7f9eee5b2fff3f1">[email&#160;protected]</span></a>
+                                            </li>
+                                            <li class="position-relative">
+                                                <img src="assets/img/icons/phone-small.svg" alt="Icon">
+                                                <h6 class="font-primary fw-bold fs-18 text-title mb-6">Phone</h6>
+                                                <a href="tel:000123456780" class="link style-two fw-normal">+00 (0) 123 456 780</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-2 offset-xxl-1 col-xl-3 col-lg-3 col-md-6 ps-xxl-5">
+                                    <div class="footer-widget mb-30">
+                                        <h3 class="footer-widget-title fs-24 fw-normal text-title position-relative">The Shop</h3>
+                                        <ul class="footer-menu list-unstyled mb-0">
+                                            <li><a href="shop-left-sidebar.html" class="link style-two">Birthday Cakes</a></li>
+                                            <li><a href="shop-left-sidebar.html" class="link style-two">Farewell Party Cakes</a></li>
+                                            <li><a href="shop-left-sidebar.html" class="link style-two">Christmas Cakes</a></li>
+                                            <li><a href="shop-left-sidebar.html" class="link style-two">Baby Shower Cakes</a></li>
+                                            <li><a href="shop-left-sidebar.html" class="link style-two">Chocolate Cakes</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-2 offset-xxl-1 col-xl-3 col-lg-3 col-md-6 ps-xxl-60">
+                                    <div class="footer-widget mb-30">
+                                       <h3 class="footer-widget-title fs-24 fw-normal text-title position-relative">Useful Links</h3>
+                                        <ul class="footer-menu list-unstyled mb-0">
+                                            <li><a href="contact.html" class="link style-two">Contact us</a></li>
+                                            <li><a href="testimonials.html" class="link style-two">Customer Feedback</a></li>
+                                            <li><a href="team.html" class="link style-two">Professional Team</a></li>
+                                            <li><a href="menu.html" class="link style-two">Cake Menu</a></li>
+                                            <li><a href="blog-left-sidebar.html" class="link style-two">Latest News & Blog</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-2 offset-xxl-1 col-xl-2 col-lg-2 col-md-6 ps-xxl-5">
+                                    <div class="footer-widget mb-30 ">
+                                        <h3 class="footer-widget-title fs-24 fw-normal text-title position-relative">Social Media</h3>
+                                        <ul class="social-profile style-five list-unstyled mb-0">
+                                            <li><a href="https://www.facebook.com/" target="_blank" class="d-flex flex-wrap align-items-center"><span class="social-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition"><i class="ri-facebook-fill"></i></span><span class="social-linkname">Facebook</span></a></li>
+                                            <li><a href="https://x.com/?lang=en" target="_blank" class="d-flex flex-wrap align-items-center"><span class="social-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition"><i class="ri-twitter-x-line"></i></span><span class="social-linkname">Twitter</span></a></li>
+                                            <li><a href="https://www.instagram.com/" target="_blank" class="d-flex flex-wrap align-items-center"><span class="social-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition"><i class="ri-instagram-line"></i></span><span class="social-linkname">Instagram</span></a></li>
+                                            <li><a href="https://www.linkedin.com/" target="_blank" class="d-flex flex-wrap align-items-center"><span class="social-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition"><i class="ri-linkedin-fill"></i></span><span class="social-linkname">Linkedin</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom position-relative bg-title z-1">
+                        <div class="container style-one">
+                            <div class="row">
+                                <div class="col-md-7">
+                                     <p class="copyright-text text-white text-md-start text-center mb-0"><i class="ri-copyright-line"></i><span class="text-white fw-medium">PinkBakery</span> is Proudly Owned by <a href="https://hibootstrap.com/" target="_blank" class="text-white hover-text-secondary fw-semibold">HiBootstrap</a></p>
+                                </div>
+                                <div class="col-md-5">
+                                    <ul class="footer-bottom-menu list-unstyled text-lg-end text-center mb-0">
+                                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- Footer End -->
+
+            </div>
+        </div>
+        <!-- Back to Top -->
+        <div id="progress-wrap" class="progress-wrap style-one">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+              <path id="progress-path" d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+            </svg>
+        </div>
+
+        <!-- Popup Newsletter start-->
+        <div id="popup-overlay"></div>
+        <div id="newsletter-popup">
+            <button class="close-btn"><i class="ri-close-line"></i></button>
+            <div class="newsletter-body d-flex flex-wrap align-items-center">
+                <div class="newsletter-bg bg-f"></div>
+                <div class="newsletter-content">
+                    <h3 class="fs-24 mb-15">Subscribe To Our Newsletter</h3>
+                    <p class="mb-20">Sign up for our newsletter to latest weekly updates & news</p>
+                    <form action="#" class="newsletter-form">
+                        <input type="email" class="w-100 bg-ash border-0 round-10 text-para ht-56 outline-0" placeholder="Enter your email">
+                        <button class="btn style-two d-block w-100 position-relative z-1 round-10">Subscribe</button>
+                        <div class="form-check checkbox style-two mt-3">
+                            <input class="form-check-input" type="checkbox" id="dont-show-again"
+                            >
+                            <label class="form-check-label text-para" for="dont-show-again">
+                                Don’t Show This Popup Again
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Link of JS files -->
+        <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/megamenu.js"></script>
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <script src="assets/js/fslightbox.js"></script>
+        <script src="assets/js/gsap.min.js"></script>
+        <script src="assets/js/scrollTrigger.min.js"></script>
+        <script src="assets/js/lenis.min.js"></script>
+        <script src="assets/js/scrollToPlugin.js"></script>
+        <script src="assets/js/SplitText.min.js"></script>
+        <script src="assets/js/customEase.js"></script>
+        <script src="assets/js/scrollcue.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+
+<!-- Mirrored from templates.hibootstrap.com/pinkbakery/default/shop-by-category.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 18 Jan 2026 14:55:57 GMT -->
+</html>

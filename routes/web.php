@@ -4,15 +4,22 @@ use Illuminate\Support\Facades\Route;
 
 
 
+// Frontend Routes
+
+Route::get('/', function () {
+    return view('frontend.home.index');
+})->name('frontend.home.index');
+
+
 
 
 
 // Backend Routes
 
 // Authentication Routes
-Route::get('/', function () {
-    return view('frontend.index');
-})->name('frontend.index');
+// Route::get('/', function () {
+//     return view('frontend.index');
+// })->name('frontend.index');
 
 // Route::get('/login', function () {
 //     return view('backend.login');

@@ -6,32 +6,90 @@ use Illuminate\Support\Facades\Route;
 
 // Frontend Routes
 
+// ========= Common Pages =============
 Route::get('/', function () {
     return view('frontend.home.index');
 })->name('frontend.home.index');
 
+Route::get('/about', function () {
+    return view('frontend.pages.about');
+})->name('frontend.pages.about');
+
+Route::get('/contact', function () {
+    return view('frontend.pages.contact');
+})->name('frontend.pages.contact');
+
+Route::get('/team', function() {
+    return view('frontend.pages.team');
+})->name('frontend.pages.team');
+
+Route::get('/faq', function() {
+    return view('frontend.pages.faq');
+})->name('frontend.pages.faq');
+
+Route::get('/menu', function() {
+    return view('frontend.pages.shop.menu');
+})->name('frontend.pages.shop.menu');
+
+Route::get('/gallery', function() {
+    return view('frontend.pages.gallery');
+})->name('frontend.pages.gallery');
+
+Route::get('/privacy-policy', function() {
+    return view('frontend.pages.privacy-policy');
+})->name('frontend.pages.privacy-policy');
+
+Route::get('/terms-and-conditions', function() {
+    return view('frontend.pages.terms-conditions');
+})->name('frontend.pages.terms-and-conditions');
+// ================ End ==================
 
 
+// ============== Blogs Routes ================
+Route::get('/blog', function() {
+    return view('frontend.pages.blogs.blog');
+})->name('frontend.pages.blog');
 
+Route::get('/blog/{id}', function() {
+    return view('frontend.pages.blogs.blog-detail');
+})->name('frontend.pages.blog.view');
+
+// ================ End ==================
+
+// ============= Profile ================
+Route::get('/account', function () {
+    return view('frontend.pages.profile.my-account');
+})->name('frontend.pages.profile.my-account');
+
+// ================ End ==================
+
+// ============= Shop Routes ================
+Route::get('/shop', function () {
+    return view('frontend.pages.shop.shop');
+})->name('frontend.pages.shop.shop');
+
+Route::get('/product-details/{id}', function () {
+    return view('frontend.pages.shop.product-details');
+})->name('frontend.pages.shop.product-details');
+
+Route::get('/checkout', function () {
+    return view('frontend.pages.shop.checkout');
+})->name('frontend.pages.shop.checkout');
+
+Route::get('/order-confirmation', function () {
+    return view('frontend.pages.shop.order-confirmation');
+})->name('frontend.pages.shop.order-confirmation');
+
+Route::get('/wishlist', function () {
+    return view('frontend.pages.shop.wishlist');
+})->name('frontend.pages.shop.wishlist');
+
+Route::get('/cart', function () {
+    return view('frontend.pages.shop.cart');
+})->name('frontend.pages.shop.cart');
+// ================= End ==================
 
 // Backend Routes
-
-// Authentication Routes
-// Route::get('/', function () {
-//     return view('frontend.index');
-// })->name('frontend.index');
-
-// Route::get('/login', function () {
-//     return view('backend.login');
-// })->name('login');
-
-// Route::get('/register', function () {
-//     return view('backend.register');
-// })->name('register');
-
-// Route::get('/password/reset', function () {
-//     return view('backend.reset-password');
-// })->name('password.request');
 
 
 
